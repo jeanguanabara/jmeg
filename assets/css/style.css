@@ -42,6 +42,7 @@
   padding: 1%;
   width: 40vw;
   border-radius: 36.5px;
+  transition: 2s;
 }
 
 .hBusca:hover {
@@ -81,6 +82,7 @@
 .hDown div {
   width: 100%;
   text-align: center;
+  transition: 1.5s;
 }
 
 .hDown div:hover {
