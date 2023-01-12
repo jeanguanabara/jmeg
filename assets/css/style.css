@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Mulish','Times New Roman';
+}
+
+header {
+    border : 1px solid red;
+}
+
+.hTop {
+    display: flex;
+    background-color: #749C94;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 3%
+    
+
+}
+
+.hTop a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+.hSocialMedia {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hSocialMedia a {
+    margin-left: 0.5vw;
+}
+
+
+
+
+
