@@ -175,3 +175,44 @@ main {
   width: 100%;
 }
 
+.mPBItem {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  cursor: pointer;
+  transition: 2s;
+}
+
+.mPBItem:hover {
+  transform: scale(1.125);
+ 
+
+}
+
+.mPBItemImg-Comprar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  background: white;
+}
+
+
+
+.mPBItemIMG img {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
