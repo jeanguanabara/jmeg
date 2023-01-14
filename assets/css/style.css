@@ -91,3 +91,86 @@
   background-color: #749c94;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+
+
+/* MAIN */
+
+main {
+  background-color: #749c94;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5% 3%;
+}
+
+.mNewProdutos,
+.mBanner,
+.mMarcas,
+.mProdutosBaratos {
+  background-color: #AED4D3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1% 0;
+}
+
+
+
+.mNPItem {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: #4BB3A2;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  cursor: pointer;
+  transition: 2s;
+}
+
+.mNPItem:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+  transition: 0.5s;
+  
+}
+
+.mNPItemPic {
+  border-radius: 30%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.mNPItemPic img {
+  width: 80%;
+}
+
+
+
+.mBanner img {
+  width: 100%;
+  
+}
+
+
+.mMMarca {
+  padding: 3%;
+  transition: 1s;
+}
+
+.mMMarca:hover {
+  transform: scale(1.125);
+  cursor: pointer;
+}
+
+.mMMarca img {
+  width: 100%;
+}
