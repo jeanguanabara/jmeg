@@ -184,12 +184,11 @@ main {
   align-items: center;
   margin: 2%;
   cursor: pointer;
-  transition: 2s;
+  transition: 1s;
 }
 
 .mPBItem:hover {
   transform: scale(1.125);
- 
 
 }
 
@@ -204,10 +203,11 @@ main {
 }
 
 
-
 .mPBItemIMG img {
   width: 100%;
 }
+
+
 
 
 
