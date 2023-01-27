@@ -213,6 +213,15 @@ main {
   width: 100%;
 }
 
+.footer-bg{
+  background-color: #749C94;
+  
+}
+
+.container-bg-footer{
+  background-color: #8FE3CF;
+  padding: 1% 0%;
+}
 
 
 
