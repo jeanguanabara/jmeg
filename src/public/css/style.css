@@ -13,7 +13,11 @@
   color: white;
   justify-content: space-between;
   align-items: center;
-  padding: 0% 3%;
+  
+}
+
+.h-top-bg{
+  background-color: #749c94
 }
 
 .hTop a {
@@ -30,6 +34,7 @@
   margin-left: 0.5vw;
 }
 
+.h-middle-bg,
 .hMiddle {
   background-color: #4bb3a2;
 }
@@ -73,6 +78,7 @@
   color: black;
 }
 
+.h-down-bg,
 .hDown {
   background-color: #aed4d3;
   color: black;
