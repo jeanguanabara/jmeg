@@ -8,6 +8,7 @@ const router = express.Router();//Aqui puxo especificadamente a função Router(
 //CRIAÇÃO DAS ROTAS
 router.get('/', HomeController.showHomePage)//aqui eu digo que a rota quando vem de um get na página inicial, ele vai puxar uma função do controller onde terão todas essas configurações acopladas. Ficando muito mais fácil daí e mais simples aqui.
 router.get('/ConsultaProd', HomeController.showConsultaProd)
+router.get('/meuCarrinho', HomeController.showMeuCarrinho)
 
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS
 module.exports = router

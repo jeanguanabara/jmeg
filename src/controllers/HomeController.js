@@ -4,7 +4,12 @@ const HomeController = {
     },
     showConsultaProd:(req,res)=> {
         return res.render("consultaProdutos")
+    },
+    showMeuCarrinho: (req, res)=>{
+        return res.render("meuCarrinho")
     }
+
+    
 }
 
 
