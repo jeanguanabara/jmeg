@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%- include ("./components/head.ejs") %>
-<body>
-   <%- include ("./components/header.ejs")%>
+  <%- include ("./components/head.ejs") %>
+  <body>
+    <%- include ("./components/header.ejs")%>
 
+    <main>
+      <section class="container">
+        <ol class="list-group list-group-numbered">
+            <%- include("./components/teste-item-carrinho.ejs")  %> 
+            <%- include("./components/teste-item-carrinho.ejs")  %> 
+            <%- include("./components/teste-item-carrinho.ejs")  %> 
+            <%- include("./components/teste-item-carrinho.ejs")  %> 
+            
+            
+          </ol>
+      </section>
+        
+    </main>
 
-   <%- include ("./components/footer")%>
-</body>
+    <%- include ("./components/footer")%>
+  </body>
 </html>

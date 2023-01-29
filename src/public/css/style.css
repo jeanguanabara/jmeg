@@ -232,7 +232,13 @@ main {
 }
 
 
+.item-meu-carrinho img {
+  width: 10vw;
+}
 
+.lista-item-meu-carrinho{
+  box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.75);
+}
 
 
 
