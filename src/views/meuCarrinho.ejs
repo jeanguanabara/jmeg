@@ -7,16 +7,48 @@
     <main>
       <section class="container">
         <ol class="list-group list-group-numbered">
-            <%- include("./components/teste-item-carrinho.ejs")  %> 
-            <%- include("./components/teste-item-carrinho.ejs")  %> 
-            <%- include("./components/teste-item-carrinho.ejs")  %> 
-            <%- include("./components/teste-item-carrinho.ejs")  %> 
-            <%- include("./components/teste-item-carrinho.ejs")  %> 
+          <%- include("./components/teste-item-carrinho.ejs") %> 
 
-            
-          </ol>
+        </ol>
       </section>
-        
+
+      <section
+        class="container d-flex justify-content-between p-3 align-middle"
+      >
+        <div class="d-flex justify-content-between p-3 align-middle flex-row ">
+          <div class="m-2">
+            <label for="" class="form-label">Número do Cartão</label>
+          <input
+            type="text"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+            id="numero-cartao-credito"
+            class="form-control"
+            maxlength="16"
+          />
+          </div>
+          <div class="m-2 cvv-carrinho">
+            <label for="" class="form-label number">CVV</label>
+            <input
+            type="text"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+            id="numero-cvv"
+            class="form-control"
+            maxlength="3"
+            />
+          </div>
+          
+          
+         
+          
+        </div>
+        <div class="">
+          <div class="input-group m-5 d-flex justify-content-center">
+            <span class="input-group-text">R$</span>
+            <span id="vlr-total-carrinho" class="input-group-text">0</span>
+            <a class="btn btn-primary" href="">Finalizar</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <%- include ("./components/footer")%>

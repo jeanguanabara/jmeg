@@ -1,5 +1,5 @@
 window.addEventListener('load', ()=> {
-    console.log('Loaded')
+    console.log('Loaded js index')
       
     } 
 
