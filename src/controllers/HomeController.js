@@ -9,10 +9,13 @@ const HomeController = {
         return res.render("meuCarrinho")
     },
     showLogin:(req, res)=>{
-        return res.render("Login")
+        return res.render("login")
     },
     showCadastro:(req, res)=>{
-        return res.render("Cadastro")
+        return res.render("cadastro")
+    },
+    showItemVenda:(req, res)=>{
+        return res.render("itemVenda")
     }
 
     

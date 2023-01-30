@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ("./components/head.ejs") %> 
+<body>
+
+    <%- include("./components/header.ejs")%>
+
+    <main>
+
+        <section class="container">
+           <section class="d-flex flex-row justify-content-between align-items-center">
+             <div class="imagem-item-venda">
+                <img src="/img/avif/dell-teste.avif" class="img-thumbnail" alt="Imagem Produto">  
+             </div>
+             <div class="p-5 m-6">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title text-black">Nome produto</h5>
+                      <div class="card-text text-black d-flex flex-row">
+                        <p class="m-1">R$</p>
+                        <p class="m-1">5000,00</p>
+                      </div>
+                      
+                      <a href="/meucarrinho" class="btn btn-primary">COMPRAR</a>
+                    </div>
+                  </div> 
+             </div>   
+           </section> 
+           <section>
+            <div class="w-100 p-5  card text-black">
+                <h1 class="display-4 fw-normal">Nome do Produto</h1>
+                <p class="lead fw-normal">UMA DESCRICAO BEM GRANDE SOBRE O PRODUTO COPIADA DO SITE DO FABRICANTE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id nisi iure deserunt obcaecati esse nam. Laborum exercitationem minima assumenda ipsum labore, quibusdam ipsa voluptate ratione iure quod consectetur necessitatibus tempore.
+                Quod, doloremque saepe. Aut sed quos aspernatur, sunt quas magni qui aliquam! Excepturi voluptatum soluta voluptates voluptate error animi fuga accusantium nostrum eveniet. Inventore sequi deleniti eveniet obcaecati? Inventore, recusandae.
+                Cum rem officiis, ratione eaque architecto commodi necessitatibus nisi fuga repellat aperiam nostrum doloribus ex mollitia a non maxime, atque blanditiis odit? Excepturi, quae debitis autem repellendus suscipit beatae a.</p>
+               
+            </div>
+
+           </section>
+
+           <section class="card p-5 w-100 text-black">
+            <table>
+                <h3><strong>Especificações Técnicas</strong></h3>
+                <thead>
+                  
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>MARCA: </td>
+                    <td>PROCESSADOR: </td>
+                    <td>MEMÓRIA RAM: </td>
+                    <td>TAMANHO MONITOR: </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>DELL</td>
+                    <td>CORE I3 12ª</td>
+                    <td>8GB</td>
+                    <td>15.6</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+
+
+           </section>
+
+        </section>
+
+
+    </main>
+
+
+    <%- include("./components/footer.ejs") %>
+    
+</body>
+</html>
