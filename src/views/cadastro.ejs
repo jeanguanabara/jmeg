@@ -5,6 +5,19 @@
 
   <style>
 
+body{
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    main{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     h3 {
         margin-top: 20px;
     }
@@ -25,6 +38,10 @@
     label {
         color: black;
         font-weight: bold;
+    
+    }
+    input {
+    
     }
     button {        
         margin-bottom: 20px;        
@@ -36,7 +53,9 @@
 <body>
     <%- include ("./components/header.ejs") %>
 
-    <div class=" container formulario">
+    <main>
+
+    <div class=" container formulario">    
 
     <div class="form">
         <h3>Cadastrar novo Usuário</h3>
@@ -64,8 +83,10 @@
 
     </div>
 </div>
+</main>
 
 
     <%- include ("./components/footer.ejs") %>
+
 </body>
 </html>
