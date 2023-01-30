@@ -10,6 +10,9 @@ const HomeController = {
     },
     showLogin:(req, res)=>{
         return res.render("Login")
+    },
+    showCadastro:(req, res)=>{
+        return res.render("Cadastro")
     }
 
     

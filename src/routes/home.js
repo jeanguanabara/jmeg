@@ -10,6 +10,7 @@ router.get('/', HomeController.showHomePage)//aqui eu digo que a rota quando vem
 router.get('/ConsultaProd', HomeController.showConsultaProd)
 router.get('/meuCarrinho', HomeController.showMeuCarrinho)
 router.get('/login', HomeController.showLogin)
+router.get('/cadastro', HomeController.showCadastro)
 
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS
 module.exports = router

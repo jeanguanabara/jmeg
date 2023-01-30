@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include('./components/head.ejs') %>
+
+  <style>
+
+    h3 {
+        margin-top: 20px;
+    }
+    .formlario {
+        width: 80%;
+        height: 400px;
+        background-color: red;
+        margin: 0 auto;
+        display: flex;
+    }
+    .form {
+        width: 50%;
+        height: 95%;
+        
+        margin: 0 auto;
+        flex-grow: 1;
+    }
+    label {
+        color: black;
+        font-weight: bold;
+    }
+    button {        
+        margin-bottom: 20px;        
+    }
+    
+    
+  </style>
+
+<body>
+    <%- include ("./components/header.ejs") %>
+
+    <div class=" container formulario">
+
+    <div class="form">
+        <h3>Cadastrar novo Usuário</h3>
+        <form name="fmUsuarios" method="post" action="" onsubmit="return validaCampos()">
+            <label>Nome</label><br>
+            <input type="text" name="txtNome" class="form-control" maxlength="70"><br>
+
+            <label>E-mail:</label><br>
+            <input type="email" name="txtEmail" class="form-control" maxlength="50"><br>
+
+            <label>Login:</label><br>
+            <input type="text" name="txtLogin" class="form-control" maxlength="30"><br>
+
+            <label>Senha:</label><br>
+            <input type="password" name="txtSenha1" class="form-control" maxlength="16"><br>
+
+            <label>Repita a Senha:</label><br>
+            <input type="password" name="txtSenha2" class="form-control" maxlength="16"><br>
+            
+            </select>
+            <button type="submit" name="btnSubmitUsuario" class="btn btn-primary" w-100>Cadastrar Usuário</button>
+
+
+        </form>
+
+    </div>
+</div>
+
+
+    <%- include ("./components/footer.ejs") %>
+</body>
+</html>
