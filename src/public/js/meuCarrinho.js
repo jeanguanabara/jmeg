@@ -61,6 +61,10 @@ window.addEventListener("load", () => {
 
 
 
+
+
+
+    //FUNCÇÕES DO CARRINHO DE COMPRAS
     function calculaVlrTotal(){
 
         console.log('Executou funcao')
