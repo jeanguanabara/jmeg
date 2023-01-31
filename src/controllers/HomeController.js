@@ -16,6 +16,12 @@ const HomeController = {
     },
     showItemVenda:(req, res)=>{
         return res.render("itemVenda")
+    },
+    showHomeCliente:(req, res)=>{
+        return res.render("homecliente")
+    },
+    showEditaMeuCadastro:(req, res)=>{
+        return res.render("editameucadastro")
     }
 
     

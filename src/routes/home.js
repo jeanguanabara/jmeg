@@ -12,6 +12,8 @@ router.get('/meuCarrinho', HomeController.showMeuCarrinho)
 router.get('/login', HomeController.showLogin)
 router.get('/cadastro', HomeController.showCadastro)
 router.get('/itemvenda', HomeController.showItemVenda)
+router.get('/homecliente', HomeController.showHomeCliente)
+router.get('/editameucadastro', HomeController.showEditaMeuCadastro)
 
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS
 module.exports = router
