@@ -39,7 +39,7 @@
               <form class="" novalidate="">
                 <div class="row g-3">
                   <div class="col">
-                    <label for="firstName" class="form-label">Nome</label>
+                    <label for="Name" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="Name" placeholder="" value="" required="">
                     
                   </div>
@@ -66,51 +66,19 @@
 
                   <div class="col-md-3">
                     <label for="zip" class="form-label">CEP</label>
-                    <input type="text" class="form-control" id="cep" placeholder="00000000" required="" maxlength="8" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    <input type="number" class="form-control" id="cep" placeholder="00000000" required="" maxlength="8" >
                     
                   </div>
 
                   <div class="col-md-5">
                     <label for="country" class="form-label">Estado</label>
-                    <select class="form-select" id="cboEstado" required="">
-                      <option></option>
-                      <option>Acre</option>
-                      <option>Alagoas</option>
-                      <option>Amapá</option>
-                      <option>Amazonas</option>
-                      <option>Bahia</option>
-                      <option>Ceará</option>
-                      <option>Distrito Federal</option>
-                      <option>Espírito Santo</option>
-                      <option>Goiás</option>
-                      <option>Maranhão</option>
-                      <option>Mato Grosso</option>
-                      <option>Mato Grosso do Sul</option>
-                      <option>Minas Gerais</option>
-                      <option>Pará</option>
-                      <option>Paraíba</option>
-                      <option>Paraná</option>
-                      <option>Pernambuco</option>
-                      <option>Piauí</option>
-                      <option>Rio de Janeiro</option>
-                      <option>Rio Grande do Norte</option>
-                      <option>Rio Grande do Sul</option>
-                      <option>Rondônia</option>
-                      <option>Roraima</option>
-                      <option>Santa Catarina</option>
-                      <option>São Paulo</option>
-                      <option>Sergipe</option>
-                      <option>Tocantins</option>
-                    </select>
+                    <input type="text" class="form-control" id="estado" placeholder="" value="" required="">
                     
                   </div>
       
                   <div class="col-md-4">
                     <label for="state" class="form-label">Cidade</label>
-                    <select class="form-select" id="cidade" required="">
-                      <option value=""></option>
-                      
-                    </select>
+                    <input type="text" class="form-control" id="cidade" placeholder="" value="" required="">
                     
                   </div>
       
