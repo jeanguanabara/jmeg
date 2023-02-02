@@ -7,21 +7,38 @@ window.addEventListener('load', ()=> {
     const cpf = document.getElementById('cpf')
     const email = document.getElementById('email')
     const cep = document.getElementById('cep')
-    const estado = document.getElementById('cboEstado')
+    const uf = document.getElementById('uf')
     const cidade = document.getElementById('cidade')
     const logradouro = document.getElementById('logradouro')
     const complemento = document.getElementById('complemento')
     
 
-    console.log(cep)
+    
     
 
 
 
     cep.addEventListener('input',()=>{
-       console.log('Change para ',cep.value)
+       
+       
+       if (cep.value.length > 7){
+
+        console.log(cep.value)
+        
+        fetch('https://viacep.com.br/ws/'+cep.value+'/json/')
+        .then(retornoViaCep => {
+            return retornoViaCep.json()
+        })
+        .then(retornoEndereco => {
+            uf.value = retornoEndereco.uf
+            cidade.value = retornoEndereco.localidade
+            logradouro.value = retornoEndereco.logradouro
+        })
+       }
         
     })
+
+    
 
    
 })

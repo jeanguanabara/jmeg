@@ -22,6 +22,9 @@ const HomeController = {
     },
     showEditaMeuCadastro:(req, res)=>{
         return res.render("editameucadastro")
+    },
+    showMeusPedidos:(req, res)=>{
+        return res.render("meuspedidos")
     }
 
     
