@@ -2,6 +2,7 @@
 const express = require('express');//aqui importo o express que baixei
 const path = require('path');//aqui importo o path que é nativo do node
 const homeRouter = require('./routes/home')
+const adminRouter = require('./routes/admin')
 
 //VARIÁVEIS, AQUI DEFINO AS VARIÁVEIS PARA TRABALHAR COM O BACK
 const app = express(); //aqui puxo a função do express para a variável app
@@ -14,6 +15,8 @@ app.use(express.static(path.resolve('src','public')))//aqui puxo a pasta public 
 
 //ROTAS, AQUI DEFINO AS ROTAS DE APONTAMENTO CONFORME AS PÁGINAS DO SITE. TENHO QUE PUXAR AQUI LÁ DA PASTA ROUTES.
 app.use(homeRouter)
+app.use(adminRouter)
+
 
 //LISTENING, POR FIM DIGO EM QUAL PORTA O EXPRESS VAI FICAR ESCUTANDO.
 app.listen(port,()=> console.log(`Server listening on port ${port}`)) 
