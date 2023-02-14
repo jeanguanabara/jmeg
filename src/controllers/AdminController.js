@@ -1,9 +1,5 @@
 const AdminController = {
-<<<<<<< HEAD
-    showAdminCadastro: (req,res)=> {
-        return res.render("adminCadastro")
-    },
-=======
+
     showHomeAdmin: (req,res)=>{
         return res.render('homeAdmin')
     },
@@ -17,7 +13,7 @@ const AdminController = {
     showEditaCadItem: (req,res)=> {
         return res.render("editaCadItemAdmin")
     }
->>>>>>> 4ee8c1bf681d1d742697ee3429a2624636913f62
+
 
     
 }
