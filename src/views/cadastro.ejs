@@ -58,34 +58,90 @@ body{
 
     <div class=" container formulario">    
 
-    <div class="form">
+    <div class="" novalidate="">
         <h3>Cadastrar novo Usuário</h3>
         <form name="fmUsuarios" method="post" action="" onsubmit="return validaCampos()">
-            <label>Nome</label><br>
-            <input type="text" name="txtNome" class="form-control" maxlength="70"><br>
+            
+                
+                  <label for="Name" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="Name" placeholder="" value="" required="">
+                  
+                
+          
+                
+            <div class="col-md-3">
+                <label 
+                for="username" 
+                class="form-label" 
+                 
+                >CPF</label>
+                <div class="input-group has-validation">
+                  <input type="text" class="form-control" id="CPF" placeholder="" required="" maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                
+                </div>
+              </div>                    
+              
 
-            <label>E-mail:</label><br>
-            <input type="email" name="txtEmail" class="form-control" maxlength="50"><br>
+              
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                
+              
 
-            <label>Login:</label><br>
-            <input type="text" name="txtLogin" class="form-control" maxlength="30"><br>
+              
+                <label for="zip" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep" placeholder="00000000" required="" maxlength="8" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                
+              
+              <div class="col-md-2">
+                <label for="country" class="form-label">UF</label>
+                <input type="text" class="form-control" id="uf" placeholder="" value="" required="">
+                
+              </div>
+  
+              <div class="col-md-7">
+                <label for="state" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="cidade" placeholder="" value="" required="">
+                
+              </div>
+  
+              <div class="col-12">
+                <label for="address" class="form-label">Logradouro</label>
+                <input type="text" class="form-control" id="logradouro" placeholder="Rua a, N 85" required="">
+                
+              </div>
+  
+              <div class="col-12">
+                <label for="address2" class="form-label">Complemento</label>
+                <input type="text" class="form-control" id="complemento" placeholder="Casa/Apartamento/Quadra">
+              </div>              
+                
+            </div>
+  
+            
+                 <label>Login:</label><br>
+                 <input type="text" name="txtLogin" class="form-control" maxlength="30"><br>
+            
 
-            <label>Senha:</label><br>
-            <input type="password" name="txtSenha1" class="form-control" maxlength="16"><br>
+            <div class="col-12">
+                 <label>Senha:</label><br>
+                  <input type="password" name="txtSenha1" class="form-control" maxlength="16"><br>
+             </div>
 
-            <label>Repita a Senha:</label><br>
-            <input type="password" name="txtSenha2" class="form-control" maxlength="16"><br>
+             <div>
+                 <label>Repita a Senha:</label><br>
+                 <input type="password" name="txtSenha2" class="form-control" maxlength="16"><br>
+            </di>
             
             </select>
-            <button type="submit" name="btnSubmitUsuario" class="btn btn-primary" w-100>Cadastrar Usuário</button>
-
+            <button type="submit" name="btnSubmitUsuario" class="btn btn-primary" w-100>Cadastrar Usuário</button></a>
+           
 
         </form>
 
     </div>
 </div>
 </main>
-
 
     <%- include ("./components/footer.ejs") %>
 
