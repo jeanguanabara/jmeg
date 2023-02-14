@@ -6,7 +6,10 @@ const AdminController = require('../controllers/AdminController')
 const router = express.Router();//Aqui puxo especificadamente a função Router() de dentro do express
 
 //CRIAÇÃO DAS ROTAS
-router.get('/admincadastro', AdminController.showAdminCadastro)
+router.get('/homeadmin', AdminController.showHomeAdmin)
+router.get('/produtosadmin', AdminController.showProdutosAdmin)
+router.get('/cadastroproduto', AdminController.showCadastroProduto)
+router.get('/editacaditem', AdminController.showEditaCadItem)
 
 
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang=pt-BR">
+  <%- include('./components/headAdmin.ejs') %>
+
+    <body>
+
+      <%- include('./components/headerAdmin.ejs') %>
+
+        <main class="bg-secondary">
+          <section class="container py-2 rounded-2 d-flex flex-wrap" style="
+            background-color: var(--bs-tertiary-color);">
+
+            <div class="d-flex flex-column me-2" style="height: 60rem;">
+              <!-- Menu lateral -->
+
+              <a href="/produtosadmin" class="btn btn-danger me-2 mt-2">CANCELAR</a>
+            </div>
+            <div class="col-md-7 col-lg-8 flex-fill p-2 text-white">
+              <form class="needs-validation" enctype="multipart/form-data"
+                method="post" action="salvarItem">
+                <div class="row g-3">
+                  <div class="col-sm-13">
+                    <label for="nomeProduto" class="form-label">Nome Produto</label>
+                    <input type="text" class="form-control" id="nomeProduto"
+                      placeholder="Nome Produto" value="" required="">
+
+                  </div>
+
+                  <div class="col-3">
+                    <label for="valorVenda" class="form-label">Valor Venda</label>
+                    <div class="input-group has-validation d-flex flex-row
+                      text-center">
+
+                      <p class="me-1">R$</p>
+
+                      <input type="number" class="form-control "
+                        id="valorProduto" placeholder="999,99" step="0.01"
+                        min="0.01" required="">
+
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="textoProduto" class="form-label">Descrição do
+                      Item</label>
+
+                    <textarea class="form-control" id="textoProduto" rows="10"></textarea>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="state" class="form-label">MARCA</label>
+                    <select class="form-select" id="marcaProduto" required="">
+                      <option value=""></option>
+                      <option>AQUI VIRÃO AS MARCAS</option>
+                    </select>
+
+                  </div>
+                  <div class="col-md-4">
+                    <label for="state" class="form-label">PROCESSADOR</label>
+                    <select class="form-select" id="processadorProduto"
+                      required="">
+                      <option value=""></option>
+                      <option>AQUI VIRÃO OS PROCESSADORES</option>
+                    </select>
+
+                  </div>
+                  <div class="col-md-4">
+                    <label for="state" class="form-label">MEMÓRIA RAM</label>
+                    <select class="form-select" id="ramProduto" required="">
+                      <option value=""></option>
+                      <option>AQUI VIRÃO AS MEMÓRIAS RAM</option>
+                    </select>
+
+                  </div>
+                  <div class="col-md-4">
+                    <label for="state" class="form-label">TAMANHO MONITOR</label>
+                    <select class="form-select" id="monitorProduto" required="">
+                      <option value=""></option>
+                      <option>AQUI VIRÃO OS TAMANHOS DE MONITORES</option>
+                    </select>
+
+                  </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="mx-1 ">
+                  <label for="formFile" class="form-label">Imagem do Produto</label>
+                  <input class="form-control" type="file" id="upImgProdutoCadAdmin"
+                    name="imagemProduto" accept="image/*">
+                </div>
+
+                <div class="imagem-item-venda m-1">
+                  <img id="imgProdutoCadAdmin" src="/img/png/fundo-branco.png" class="img-thumbnail"
+                    alt="Imagem Produto">
+                </div>
+
+              </div>
+
+              <button class="w-100 btn btn-success btn-lg" type="submit">SALVAR</button>
+            </form>
+          </div>
+
+        </section>
+
+      </main>
+
+      <%- include('./components/footerAdmin.ejs') %>
+      </body>
+
+    </html>
