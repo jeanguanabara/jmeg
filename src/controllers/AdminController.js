@@ -1,4 +1,5 @@
 const AdminController = {
+
     showHomeAdmin: (req,res)=>{
         return res.render('homeAdmin')
     },
@@ -12,6 +13,7 @@ const AdminController = {
     showEditaCadItem: (req,res)=> {
         return res.render("editaCadItemAdmin")
     }
+
 
     
 }
