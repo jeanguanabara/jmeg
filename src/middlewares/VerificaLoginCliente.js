@@ -14,16 +14,14 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
           if (dadosLogin.vLoginSenhaCliente == baseCliente[i].senha){
             console.log('senha bateu')
              return next()
-          }else {
-            
-            return res.render('login',  {error: "Senha Incorreta"})
           }
-        } else {
-          
-          return res.render('login',  {error: "Email Incorreto"})
-        }
+        } 
     }
-    
+
+    return res.render('login', {error: 'Dados incorretos'})
+
+
+  
 
     
 
