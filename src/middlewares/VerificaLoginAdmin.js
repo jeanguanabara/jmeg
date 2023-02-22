@@ -8,7 +8,7 @@ const VerificaLoginAdmin = (req,res,next) => {
         console.log(baseAdmin[i].email)
         console.log(baseAdmin[i].senha)
         
-        if (dadosLogin.vLoginEmailCliente === baseAdmin[i].email){
+        if (dadosLogin.vLoginEmailAdmin === baseAdmin[i].email){
             console.log('email bateu')
             console.log(baseAdmin[i].email)
           if (dadosLogin.vLoginSenhaAdmin == baseAdmin[i].senha){
