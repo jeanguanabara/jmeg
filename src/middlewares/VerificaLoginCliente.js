@@ -1,40 +1,33 @@
 const VerificaLoginClienteMiddlaware = (req,res,next) => {
-    let dadosLogin = req.query
-    let baseCliente = require('../database/cliente.json')
+    const dadosLogin = req.query
+    const Cliente = require('../models/Cliente')
+    const email = dadosLogin.vLoginEmailCliente
+    const senha = dadosLogin.vLoginSenhaCliente
+
+    console.log(email)
+    console.log(senha)
 
 
-    for (let i in baseCliente){
-
-        console.log(baseCliente[i].email)
-        console.log(baseCliente[i].senha)
-        
-        if (dadosLogin.vLoginEmailCliente === baseCliente[i].email){
-            console.log('email bateu')
-            console.log(baseCliente[i].email)
-          if (dadosLogin.vLoginSenhaCliente == baseCliente[i].senha){
-            console.log('senha bateu')
-             return next()
-          }
-        } 
+    if (Cliente.findEmail(email)){
+        console.log('Email bateu')
+        if (Cliente.findSenha(email,senha)){
+            console.log('Senha bateu')
+            return next()
+        }else {
+            console.log('Senha não bateu')
+            return res.render('login', {error: "Senha Incorreta"})
+        }
+    }else {
+        console.log('Email não bateu')
+        return res.render('login', {error: "Email Incorreta"})
     }
-
-    return res.render('login', {error: 'Dados incorretos'})
 
 
   
 
     
 
-    // const {vLoginEmailCliente, vLoginSenhaCliente} = req.query
-    // console.log(vLoginEmailCliente)
-    // console.log(vLoginSenhaCliente)
-
-    // const verifyExists = baseCliente.findOne(vLoginEmailCliente)
-    // console.log(verifyExists)
-    
    
-
-    // next()
 
 
 

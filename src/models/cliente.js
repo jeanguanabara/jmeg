@@ -4,16 +4,30 @@ const db = require('../database/db.json');
 
 const Cliente =  {
     findEmail : (email)=>{
-        let buscouEmail = db.cliente.find(elemento => elemento.email === email)
-        return buscouEmail.email === email
+        
+        for (let i in db.cliente){
+            
+           if(db.cliente[i].email === email){
+            return true
+           } 
+        }
+        return false
+        
     },
     findSenha : (email,senha)=>{
-        let 
-    }
+        for (let i in db.cliente){
+            
+            if(db.cliente[i].email === email & db.cliente[i].senha === senha){
+             return true
+            } 
+         }
+         return false
+    },
+    findCliente: (email) => db.cliente.find(elemento => elemento.email === email)
 
    
 }
 
 
 
-console.log(Cliente.findEmail('mauroeckstein@hotmail.com'))
+module.exports = Cliente
