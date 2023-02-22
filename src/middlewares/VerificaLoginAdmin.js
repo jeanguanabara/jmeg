@@ -21,4 +21,6 @@ const VerificaLoginAdmin = (req,res,next) => {
     return res.render('login', {error: 'Dados incorretos'})
 }
 
+    
+
     module.exports = VerificaLoginAdmin;
