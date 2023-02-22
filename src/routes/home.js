@@ -5,6 +5,9 @@ const HomeController = require('../controllers/HomeController')
 //VARIÁVEIS, MAS AQUI NA ROTA AO INVÉS DE SÓ COLOCAR APP = EXPRESS(), vai ser a função Router() que vou precisar
 const router = express.Router();//Aqui puxo especificadamente a função Router() de dentro do express
 
+//MIDDLEWARES
+const VerificaLoginClienteMiddlaware = require('../middlewares/VerificaLoginCliente')
+
 //CRIAÇÃO DAS ROTAS
 router.get('/', HomeController.showHomePage)//aqui eu digo que a rota quando vem de um get na página inicial, ele vai puxar uma função do controller onde terão todas essas configurações acopladas. Ficando muito mais fácil daí e mais simples aqui.
 router.get('/ConsultaProd', HomeController.showConsultaProd)
@@ -12,7 +15,7 @@ router.get('/meuCarrinho', HomeController.showMeuCarrinho)
 router.get('/login', HomeController.showLogin)
 router.get('/cadastro', HomeController.showCadastro)
 router.get('/itemvenda', HomeController.showItemVenda)
-router.get('/homecliente', HomeController.showHomeCliente)
+router.get('/homecliente',VerificaLoginClienteMiddlaware, HomeController.showHomeCliente)
 router.get('/editameucadastro', HomeController.showEditaMeuCadastro)
 router.get('/meuspedidos', HomeController.showMeusPedidos)
 

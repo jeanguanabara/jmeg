@@ -22,26 +22,32 @@
     <%- include ("./components/header.ejs")%>
 
     <main>
-        <section class="rounded-4 text-center bg-white p-5">
-            <img src="/img/svg/logo-ico.svg" class="m-4">
-            <p>Digite seu email e senha:</p>
 
-            <div class="form-floating text-secondary ">
-                <input type="email" class="form-control m-2" placeholder="Email">
-                <label for="">Email</label>
-            </div>
+        <form action="/homecliente" method="get" id="formLoginCliente">
+
             
-            <div class="form-floating text-secondary">
-                <input type="password" class="form-control m-2" placeholder="Senha">
-                <label for="">Senha</label>
-            </div>
 
-         
+            <section class="rounded-4 text-center bg-white p-5">
+                <img src="/img/svg/logo-ico.svg" class="m-4">
+                <p>Digite seu email e senha:</p>
+
+                <div class="form-floating text-secondary ">
+                    <input type="email" class="form-control m-2" placeholder="Email" name="vLoginEmailCliente" id="vLoginEmailCliente">
+                    <label for="vLoginEmailCliente">Email</label>
+                </div>
                 
-            
-            <a class="btn btn-primary mt-3 mb-3" href="/cadastro">Entrar / Cadastrar</a>
+                <div class="form-floating text-secondary">
+                    <input type="password" class="form-control m-2" placeholder="Senha" name="vLoginSenhaCliente" id="vLoginSenhaCliente" >
+                    <label for="vLoginSenhaCliente">Senha</label>
+                </div>
 
-        </section>
+            
+                    
+                
+                <button class="btn btn-primary mt-3 mb-3" type="submit" form="formLoginCliente" value="submit">Entrar / Cadastrar</button>
+
+            </section>
+        </form>
     </main>
 
     <%- include ("./components/footer.ejs")%>
