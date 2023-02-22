@@ -10,7 +10,7 @@ window.addEventListener('load', ()=>{
 
     upImgProdutoCadAdmin.addEventListener('change', (event)=> {
         console.log(event)
-        console.log(event.target.value)
+        
 
         let img = new FileReader()
 
