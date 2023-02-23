@@ -5,13 +5,13 @@ const VerificaLoginAdmin = (req,res,next) => {
 
     for (let i in baseAdmin){
 
-        console.log(baseAdmin[i].email)
-        console.log(baseAdmin[i].senha)
+        console.log(baseAdmin.clientes[i].email)
+        console.log(baseAdmin.clientes[i].senha)
         
-        if (dadosLogin.vLoginEmailAdmin === baseAdmin[i].email){
+        if (dadosLogin.vLoginEmailAdmin === baseAdmin.clientes[i].email){
             console.log('email bateu')
-            console.log(baseAdmin[i].email)
-          if (dadosLogin.vLoginSenhaAdmin == baseAdmin[i].senha){
+            console.log(baseAdmin.clientes[i].email)
+          if (dadosLogin.vLoginSenhaAdmin.clientes == baseAdmin[i].senha){
             console.log('senha bateu')
              return next()
           }

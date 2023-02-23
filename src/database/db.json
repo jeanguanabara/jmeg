@@ -15,7 +15,15 @@
                 "cpf": "01792813996",
                 "email": "mauroeckstein@hotmail.com",
                 "senha": "456"
+            },
+            {
+                "id": 1,
+                "nome": "Mauricio Gabriel",
+                "cpf": "00000000000",
+                "email": "mauricioeckstein@hotmail.com",
+                "senha": "456"
             }
+            
         ],
     "produto":[
         {
@@ -44,6 +52,9 @@
             "email": "jeanguanabara@gmail.com",
             "senha": "123"
         }
+      
+       
+     
     ]
 }
 
