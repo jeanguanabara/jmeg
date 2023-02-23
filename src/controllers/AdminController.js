@@ -1,5 +1,9 @@
 const AdminController = {
 
+    showAdmin: (req,res)=>{
+        return res.render('admin', {error: ''})
+    },
+
     showHomeAdmin: (req,res)=>{
         return res.render('homeAdmin')
     },

@@ -22,22 +22,6 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
         return res.render('login', {error: "Email Incorreto"})
     }
 
-
-  
-
-    
-
-   
-
-
-
-
-
-
-
-
-    
-
     
     
 }
