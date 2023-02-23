@@ -19,7 +19,7 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
         }
     }else {
         console.log('Email não bateu') //se o email ta incorreto nem valida senha, só diz que o email ta errado.
-        return res.render('login', {error: "Email Incorreta"})
+        return res.render('login', {error: "Email Incorreto"})
     }
 
 
