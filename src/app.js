@@ -21,6 +21,8 @@ app.use(session( {
     saveUninitialized: true
 }))
 
+
+
 //ROTAS, AQUI DEFINO AS ROTAS DE APONTAMENTO CONFORME AS PÁGINAS DO SITE. TENHO QUE PUXAR AQUI LÁ DA PASTA ROUTES.
 app.use(homeRouter)
 app.use(adminRouter)
