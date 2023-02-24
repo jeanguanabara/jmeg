@@ -26,6 +26,10 @@ app.use(session( {
 //ROTAS, AQUI DEFINO AS ROTAS DE APONTAMENTO CONFORME AS PÁGINAS DO SITE. TENHO QUE PUXAR AQUI LÁ DA PASTA ROUTES.
 app.use(homeRouter)
 app.use(adminRouter)
+app.use((req,res,next)=> {
+    return res.status(404).render('notFound')
+})
+
 
 
 //LISTENING, POR FIM DIGO EM QUAL PORTA O EXPRESS VAI FICAR ESCUTANDO.
