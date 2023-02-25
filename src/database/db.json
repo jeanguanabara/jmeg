@@ -1,13 +1,13 @@
 {
 
-    "cliente": 
-        [
+    "cliente": [
             {
                 "id": 1,
                 "nome": "Jean Guanabara",
                 "cpf": "07608121955",
                 "email": "jeanguanabara@gmail.com",
-                "senha": "123"
+                "senha": "123",
+                "id_end": ""
             },
             {
                 "id": 1,
@@ -25,32 +25,76 @@
             }
             
         ],
-    "produto":[
+       "endereco": [
+            {
+                "id": "",
+                "cep": "",
+                "logradouro": "",
+                "numero": "",
+                "complemento": "",
+                "bairro": "",
+                "cidade": "",
+                "uf": ""
+            }
+
+        ],
+        "marca": [
+            {
+                "id": "",
+                "marca": ""
+            }
+        ],
+        "pedido": [
+            {
+                "id": "",
+                "id_cliente": "",
+                "total": ""
+            }
+        ],
+        "pedido_item": [
+            {
+                "id_pedido": "",
+                "id_produto": "",
+                "qnt": "",
+                "total": ""
+            }
+        ],
+        "processador": [
+            {
+                "id": "",
+                "processador": ""
+            }
+        ],
+    "produtos":[
         {
-            "id" : 1,
-            "nome": "produto1",
-            "valor": 1.10
-        },
+            "id" : "",
+            "nome": "",
+            "descricao": "",
+            "valor": "",
+            "img": "",
+            "id_marca": "",
+            "id_processador": "",
+            "id_ram": "",
+            "id_tela": ""
+        }       
+    ],
+    "ram": [
         {
-            "id" : 2,
-            "nome": "produto2",
-            "valor": 2.20  
+            "id": "",
+            "ram": ""
+        }
+    ],
+    "tela": [
+        {
+            "id": "",
+            "tela": ""
         }
     ],
     "usuarios": [
         {
-            "id": 1,
-            "nome": "Mauricio Eckstein",
-            "cpf": "01792813996",
-            "email": "mauroeckstein@hotmail.com",
-            "senha": "123456"
-        },
-        {
-            "id": 2,
-            "nome": "Jean Guanabara",
-            "cpf": "07608121955",
-            "email": "jeanguanabara@gmail.com",
-            "senha": "123"
+         "id": "",
+         "nome": "",
+         "senha": ""
         }
       
        
