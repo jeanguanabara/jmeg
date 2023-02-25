@@ -18,6 +18,7 @@ router.get('/itemvenda', HomeController.showItemVenda)
 router.get('/homecliente',VerificaLoginClienteMiddlaware, HomeController.showHomeCliente)
 router.get('/editameucadastro', HomeController.showEditaMeuCadastro)
 router.get('/meuspedidos', HomeController.showMeusPedidos)
+router.post('/homecliente',VerificaLoginClienteMiddlaware, HomeController.showHomeCliente) //EDITAR E VER VIDEO
 
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS
 module.exports = router
