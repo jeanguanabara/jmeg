@@ -6,7 +6,7 @@
                 "nome": "Jean Guanabara",
                 "cpf": "07608121955",
                 "email": "jeanguanabara@gmail.com",
-                "senha": "123",
+                "senha": "$2a$10$jiPYFqZ3c95r5VJ.xf2QduO0lgkhAC7TafSfkkvY64/R94ucZzQfq",
                 "id_end": ""
             },
             {
@@ -14,14 +14,14 @@
                 "nome": "Mauricio Eckstein",
                 "cpf": "01792813996",
                 "email": "mauroeckstein@hotmail.com",
-                "senha": "456"
+                "senha": "$2a$10$zYtkdszXnZQpViW4/n4f/uJE7eoYdDsrhqSeDw3NfwfbGyX/8GoSe"
             },
             {
                 "id": 1,
                 "nome": "Mauricio Gabriel",
                 "cpf": "00000000000",
                 "email": "mauricioeckstein@hotmail.com",
-                "senha": "456"
+                "senha": "$2a$10$zYtkdszXnZQpViW4/n4f/uJE7eoYdDsrhqSeDw3NfwfbGyX/8GoSe"
             }
             
         ],
@@ -92,10 +92,15 @@
     ],
     "usuarios": [
         {
-         "id": "",
-         "nome": "",
-         "senha": ""
-        }
+         "id": "1",
+         "nome": "mauroeckstein@hotmail.com",
+         "senha": "$2a$10$zYtkdszXnZQpViW4/n4f/uJE7eoYdDsrhqSeDw3NfwfbGyX/8GoSe"
+        },
+        {
+            "id": "2",
+            "nome": "jeanaguanabara@gmail.com",
+            "senha": "$2a$10$jiPYFqZ3c95r5VJ.xf2QduO0lgkhAC7TafSfkkvY64/R94ucZzQfq"
+           }
       
        
      

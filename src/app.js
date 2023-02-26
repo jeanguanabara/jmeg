@@ -15,11 +15,11 @@ app.set('view engine', 'ejs')//aqui digo que o express vai verificar uma engine 
 app.set('views', path.resolve('src','views'))//aqui dps de importar tenho que dizer onde ta o arquivo das 'views', as views seriam os html's convertidos para ejs.
 app.use(express.static(path.resolve('src','public')))//aqui puxo a pasta public para como estático para a raiz do servidor em execução, sendo assim no arquivo html(ejs) não preciso colocar '../public....arquivo'. Só colocar 'css/style.css' que já vai reconhecer.
 
-app.use(session( {
-    secret: "jmeg",
-    resave:true,
-    saveUninitialized: true
-}))
+app.use(session({
+    secret: 'Jmeg Session',
+    resave: false,
+    saveUninitialized: true,
+  }))
 
 
 

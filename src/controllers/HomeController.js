@@ -3,13 +3,14 @@ const HomeController = {
         return res.render("index")
     },
     showConsultaProd:(req,res)=> {
+        console.log(req.url)
         return res.render("consultaProdutos")
     },
     showMeuCarrinho: (req, res)=>{
         return res.render("meuCarrinho")
     },
     showLogin:(req, res)=>{
-        return res.render("login", {error: ''})
+        return res.render("login", {error: '', urlNext: '/homecliente'})
     },
     showCadastro:(req, res)=>{
         return res.render("cadastro")

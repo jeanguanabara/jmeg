@@ -22,22 +22,23 @@
     <%- include ("./components/header.ejs")%>
 
     <main>
+       
+            <form action="/homecliente" method="POST" id="formLoginCliente"></form>
 
-        <form action="/homecliente" method="post" id="formLoginCliente">
 
-            
-
+         
+         
             <section class="rounded-4 text-center bg-white p-5">
                 <img src="/img/svg/logo-ico.svg" class="m-4">
                 <p>Digite seu email e senha:</p>
 
                 <div class="form-floating text-secondary ">
-                    <input type="email" class="form-control m-2" placeholder="Email" name="vLoginEmailCliente" id="vLoginEmailCliente">
+                    <input type="email" class="form-control m-2" placeholder="Email" id="vLoginEmailCliente" name="vLoginEmailCliente">
                     <label for="vLoginEmailCliente">Email</label>
                 </div>
                 
                 <div class="form-floating text-secondary">
-                    <input type="password" class="form-control m-2" placeholder="Senha" name="vLoginSenhaCliente" id="vLoginSenhaCliente" >
+                    <input type="password" class="form-control m-2" placeholder="Senha" id="vLoginSenhaCliente" name="vLoginSenhaCliente">
                     <label for="vLoginSenhaCliente">Senha</label>
                 </div>
 
@@ -49,7 +50,7 @@
             
                     
                 
-                <button class="btn btn-primary mt-3 mb-3" type="submit" form="formLoginCliente" value="submit">Entrar / Cadastrar</button>
+                <button class="btn btn-primary mt-3 mb-3" type="submit" form="formLoginCliente">Entrar / Cadastrar</button>
 
             </section>
         </form>

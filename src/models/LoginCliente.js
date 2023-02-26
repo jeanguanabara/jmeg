@@ -1,13 +1,14 @@
 const db = require('../database/db.json');
+const PassModel = require('../models/PassModel')
 
 
-
-const Cliente =  {
+const LoginCliente =  {
     findEmail : (email)=>{
         
         for (let i in db.cliente){
             
            if(db.cliente[i].email === email){
+           
             return true
            } 
         }
@@ -17,7 +18,8 @@ const Cliente =  {
     findSenha : (email,senha)=>{
         for (let i in db.cliente){
             
-            if(db.cliente[i].email === email & db.cliente[i].senha === senha){
+            if(db.cliente[i].email === email & PassModel.passValidation(senha,db.cliente[i].senha)){
+                
              return true
             } 
          }
@@ -30,4 +32,6 @@ const Cliente =  {
 
 
 
-module.exports = Cliente
+
+
+module.exports = LoginCliente
