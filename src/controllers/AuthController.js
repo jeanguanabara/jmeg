@@ -6,6 +6,7 @@ const AuthController = {
         console.log(req.locals)
 
         res.redirect('/homeCliente')
+        
 
     }
 }
