@@ -10,7 +10,7 @@ const HomeController = {
         return res.render("meuCarrinho")
     },
     showLogin:(req, res)=>{
-        return res.render("login", {error: '', urlNext: '/homecliente'})
+        return res.render("login")
     },
     showCadastro:(req, res)=>{
         return res.render("cadastro")

@@ -1,9 +1,11 @@
 const bcryptjs = require('bcryptjs');
-const senhaCriptografada = '$2a$10$zYtkdszXnZQpViW4/n4f/uJE7eoYdDsrhqSeDw3NfwfbGyX/8GoSe'
+const senhaCriptografada = '$2a$10$X.Xqh4dPjupQAky1bhQnM.vaJOW9QT77FQqexfK4tNnl5BuBNExRO'
 
-const confere = bcryptjs.compareSync('123', senhaCriptografada)
+const confere = bcryptjs.compareSync('122', senhaCriptografada)
 
-const hash = bcryptjs.hashSync('456', 10)
+const hash = bcryptjs.hashSync('123', 10)
+
+
 
 console.log(hash)
 

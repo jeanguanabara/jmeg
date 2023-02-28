@@ -22,13 +22,18 @@
     <%- include ("./components/header.ejs")%>
 
     <main>
+
+        <%if (urlDestino !== "undefined") { console.log(urlDestino + " ejs login")%>
+            <form class="rounded-4 text-center bg-white p-5" action="<%urlDestino%>" id="formLoginCliente" method="POST">
+        <%} else { console.log(urlDestino + " ejs login")%>
+            <form class="rounded-4 text-center bg-white p-5" action="/homecliente" id="formLoginCliente" method="POST">
+            <%}%>
+        
        
-            <form action="/homecliente" method="POST" id="formLoginCliente"></form>
+        
 
-
-         
-         
-            <section class="rounded-4 text-center bg-white p-5">
+      
+           
                 <img src="/img/svg/logo-ico.svg" class="m-4">
                 <p>Digite seu email e senha:</p>
 
@@ -42,17 +47,17 @@
                     <label for="vLoginSenhaCliente">Senha</label>
                 </div>
 
-               
-                <p class="text-danger" ><b> <%= error %></b></p>
-
+                <% if (typeof error !== "undefined"){ %>    
+                    <p class="text-danger" ><b> <%= error %></b></p>
+                <%}%>
                 
 
             
                     
                 
-                <button class="btn btn-primary mt-3 mb-3" type="submit" form="formLoginCliente">Entrar / Cadastrar</button>
+                <button class="btn btn-primary mt-3 mb-3" type="submit" form="formLoginCliente">Entrar</button>
 
-            </section>
+           
         </form>
     </main>
 
