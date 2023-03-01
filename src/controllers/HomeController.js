@@ -19,7 +19,7 @@ const HomeController = {
         return res.render("itemVenda")
     },
     showHomeCliente:(req, res)=>{
-        return res.render("homecliente")
+        return res.render("homecliente", {clienteLogado: req.session.cliente})
     },
     showEditaMeuCadastro:(req, res)=>{
         return res.render("editameucadastro")

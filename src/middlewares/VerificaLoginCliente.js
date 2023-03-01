@@ -18,6 +18,7 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
            
             
             req.session.cliente = LoginCliente.findCliente(email) // SALVA CLIENTE NA SESSION
+            console.log(req.session.cliente)
             
             
             return next()

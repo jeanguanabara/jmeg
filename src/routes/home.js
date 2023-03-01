@@ -11,6 +11,7 @@ const router = express.Router();//Aqui puxo especificadamente a função Router(
 //MIDDLEWARES
 const VerificaLoginClienteMiddlaware = require('../middlewares/VerificaLoginCliente')
 const isClienteLogado = require('../middlewares/isClienteLogado')
+const isClienteLogadoLogin = require('../middlewares/isClienteLogadoLogin')
 
 
 //CRIAÇÃO DAS ROTAS
@@ -18,15 +19,14 @@ router.get('/', HomeController.showHomePage)//aqui eu digo que a rota quando vem
 router.get('/ConsultaProd', HomeController.showConsultaProd)
 router.post('/homecliente',VerificaLoginClienteMiddlaware, AuthController.loginCliente)
 router.get('/itemvenda', HomeController.showItemVenda)
-router.use(isClienteLogado)
-router.get('/homecliente',HomeController.showCadastro)
-router.get('/meuCarrinho', HomeController.showMeuCarrinho)
-router.get('/login', HomeController.showLogin)
-router.get('/cadastro', HomeController.showCadastro)
 
-router.get('/homecliente', HomeController.showHomeCliente)
-router.get('/editameucadastro', HomeController.showEditaMeuCadastro)
-router.get('/meuspedidos', HomeController.showMeusPedidos)
+router.get('/homecliente',isClienteLogado, HomeController. showHomeCliente)
+router.get('/meuCarrinho',isClienteLogado,  HomeController.showMeuCarrinho)
+router.get('/login',isClienteLogadoLogin,  HomeController.showLogin)
+router.get('/cadastro', isClienteLogado, HomeController.showCadastro)
+router.get('/homecliente',isClienteLogado,  HomeController.showHomeCliente)
+router.get('/editameucadastro',isClienteLogado,  HomeController.showEditaMeuCadastro)
+router.get('/meuspedidos',isClienteLogado,  HomeController.showMeusPedidos)
 //
 
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS
