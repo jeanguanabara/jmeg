@@ -22,10 +22,10 @@ const HomeController = {
         return res.render("homecliente", {clienteLogado: req.session.cliente})
     },
     showEditaMeuCadastro:(req, res)=>{
-        return res.render("editameucadastro")
+        return res.render("editameucadastro", {clienteLogado: req.session.cliente})
     },
     showMeusPedidos:(req, res)=>{
-        return res.render("meuspedidos")
+        return res.render("meuspedidos", {clienteLogado: req.session.cliente})
     }
 
     
