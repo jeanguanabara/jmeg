@@ -10,38 +10,70 @@
                 "id_end": ""
             },
             {
-                "id": 1,
+                "id": 2,
                 "nome": "Mauricio Eckstein",
                 "cpf": "01792813996",
                 "email": "mauroeckstein@hotmail.com",
                 "senha": "$2a$10$zYtkdszXnZQpViW4/n4f/uJE7eoYdDsrhqSeDw3NfwfbGyX/8GoSe"
             },
             {
-                "id": 1,
+                "id": 3,
                 "nome": "Mauricio Gabriel",
                 "cpf": "00000000000",
-                "email": "mauricioeckstein@hotmail.com",
+                "email": "mauricioeckstein@gmail.com",
                 "senha": "$2a$10$zYtkdszXnZQpViW4/n4f/uJE7eoYdDsrhqSeDw3NfwfbGyX/8GoSe"
             }
             
         ],
        "endereco": [
             {
-                "id": "",
-                "cep": "",
-                "logradouro": "",
-                "numero": "",
-                "complemento": "",
-                "bairro": "",
-                "cidade": "",
-                "uf": ""
+                "id": "1",
+                "cep": "88122049",
+                "logradouro": "Rua Rodney Brasil Machado",
+                "numero": "59",
+                "complemento": "apto 303",
+                "bairro": "SERTÃO DO MARUIM",
+                "cidade": "SÃO JOSÉ",
+                "uf": "SC"
+            },
+            {
+                "id": "2",
+                "cep": "88060440",
+                "logradouro": "Servidão Valdemiro Francisco Senabio",
+                "numero": "297",
+                "complemento": "CASA",
+                "bairro": "SÃO JOÃO DO RIO VERMELHO",
+                "cidade": "FLORIANÓPOLIS",
+                "uf": "SC"
+            },
+            {
+                "id": "3",
+                "cep": "88060440",
+                "logradouro": "Servidão Valdemiro Francisco Senabio",
+                "numero": "297",
+                "complemento": "CASA",
+                "bairro": "SÃO JOÃO DO RIO VERMELHO",
+                "cidade": "FLORIANÓPOLIS",
+                "uf": "SC"
             }
 
         ],
         "marca": [
             {
-                "id": "",
-                "marca": ""
+                "id": "1",
+                "marca": "LENOVO"
+            },
+            {
+                "id": "2",
+                "marca": "SAMSUNG"
+            },
+            {
+                "id": "3",
+                "marca": "DELL"
+            },
+            {
+                "id": "4",
+                "marca": "ACER"
             }
         ],
         "pedido": [
@@ -61,33 +93,347 @@
         ],
         "processador": [
             {
-                "id": "",
-                "processador": ""
+                "id": "1",
+                "processador": "CORE I3"
+            },
+            {
+                "id": "2",
+                "processador": "CORE I5"
+            },
+            {
+                "id": "3",
+                "processador": "CORE I7"
             }
+            
         ],
     "produtos":[
         {
-            "id" : "",
-            "nome": "",
-            "descricao": "",
-            "valor": "",
-            "img": "",
-            "id_marca": "",
-            "id_processador": "",
-            "id_ram": "",
-            "id_tela": ""
-        }       
+            "id" : 1,
+            "nome": "Notebook Vostro 3400",
+            "descricao": "Desfrute de produtividade ininterrupta",
+            "valor": 3099.00,
+            "img": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/vostro-notebooks/vostro-3400/media-gallery/dv3400nt-cnb-00055rf110-bk-notypec-v2.psd?fmt=png-alpha&pscan=auto&scl=1&wid=3514&hei=2187&qlt=100,1&resMode=sharp2&size=3514,2187&chrss=full&imwidth=5000",
+            "id_marca": 3,
+            "id_processador": 2,
+            "id_ram": 2,
+            "id_tela": 1
+        },
+        {
+            "id" : 2,
+            "nome": "Notebook Latitude 3420",
+            "descricao": "Conheça uma nova era de inteligência",
+            "valor": 4938.00,
+            "img": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/14-3420/media-gallery/peripherals-laptop-latitude-3420nt-gallery-2-pt-br.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=517&qlt=100,1&resMode=sharp2&size=517,402&chrss=full",
+            "id_marca": 3,
+            "id_processador": 1,
+            "id_ram": 2,
+            "id_tela": 1
+        },
+        {
+            "id" : 3,
+            "nome": "Notebook Vostro 3510",
+            "descricao": "O desempenho que você precisa",
+            "valor": 5497.00,
+            "img": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/vostro-notebooks/15-3510/pdp/laptop-vostro-3510-pdp-mod-1-gy-usb-a.jpg?wid=1900&hei=1031&fmt=png-alpha&qlt=90%2c0&op_usm=1.75%2c0.3%2c2%2c0&resMode=sharp&pscan=auto&fit=constrain%2c1&align=0%2c0",
+            "id_marca": 3,
+            "id_processador": 1,
+            "id_ram": 4,
+            "id_tela": 2
+        },
+        {
+            "id" : 4,
+            "nome": "Notebook Inspiron 15 5000",
+            "descricao": "Performance confiável. Design que impressiona.",
+            "valor": 5998.00,
+            "img": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/inspiron-15-5510/media-gallery/notebook-in5510nt-cnb-00055rf110-gy_fpr.psd?qlt=90,0&op_usm=1.75,0.3,2,0&resMode=sharp&pscan=auto&fmt=png-alpha&hei=500",
+            "id_marca": 3,
+            "id_processador": 3,
+            "id_ram": 4,
+            "id_tela": 2
+        },
+        {
+            "id" : 5,
+            "nome": "Notebook Gamer Dell G15",
+            "descricao": "Desempenho máximo",
+            "valor": 8299.00,
+            "img": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/g-series/g15-5520/media-gallery/g15-5520-bk-whitekb/notebook-g-15-5520-gallery-7.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=402&qlt=100,1&resMode=sharp2&size=402,402&chrss=full",
+            "id_marca": 3,
+            "id_processador": 3,
+            "id_ram": 4,
+            "id_tela": 2
+        },
+        {
+            "id" : 6,
+            "nome": "Notebook Lenovo V14",
+            "descricao": "Projetado para apoiar os negócios",
+            "valor": 2551.99,
+            "img": "https://www.lenovo.com/medias/lenovo-laptops-v-series-v14-gen2-14inch-intel-hero.png?context=bWFzdGVyfHJvb3R8MjIzOTA5fGltYWdlL3BuZ3xoM2UvaGU1LzE0MTg2OTE5NDYwODk0LnBuZ3xlMzA3MmJlZmQwZGZkZjk0MTU3MmY3OWI3NDUxNDgxYzJjYzRlM2ZlN2Q5ODlhZDc3NGM0OTk0ZTM2MmMyODAz",
+            "id_marca": 1,
+            "id_processador": 1,
+            "id_ram": 1,
+            "id_tela": 1
+        },
+        {
+            "id" : 7,
+            "nome": "Notebook Lenovo V14",
+            "descricao": "Projetado para apoiar os negócios",
+            "valor": 3167.99,
+            "img": "https://www.lenovo.com/medias/Notebook-Lenovo-V14-1-1-.jpg?context=bWFzdGVyfHJvb3R8MzgxNDk2fGltYWdlL2pwZWd8aDE3L2hjYy8xMTY1NDMyODk3NTM5MC5qcGd8NmY3NTViMTNiMWNmOWQ0YzFhZWI2ZWQzYTVhY2FjYWM1NzAyYmYwNWQ4ODQ3ZDE5NTJjZDZkYzc1MzFiMDMyYQ",
+            "id_marca": 1,
+            "id_processador": 2,
+            "id_ram": 2,
+            "id_tela": 1
+        },
+        {
+            "id" : 8,
+            "nome": "Notebook IdeaPad 3i",
+            "descricao": "Desempenho com propósito",
+            "valor": 3431.99,
+            "img": "https://www.lenovo.com/medias/?context=bWFzdGVyfHJvb3R8NzQxOTd8aW1hZ2UvcG5nfGgyNS9oOTEvMTEzNDI0MTQwMjA2MzgucG5nfGE3OGIxOWFkMGJlYmZkNmM5ODAwOWE2ODYwNDE0ZDFmNTBlMjExZWZhNjI1MmE5YmZiYzVlYzc4OTZhZDJhYjk",
+            "id_marca": 1,
+            "id_processador": 3,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 9,
+            "nome": "Notebook IdeaPad Gaming 3i",
+            "descricao": "É hora de jogar de verdade",
+            "valor": 5543.99,
+            "img": "https://www.lenovo.com/medias/Gaming-3-Intel-gen6-1.jpg?context=bWFzdGVyfHJvb3R8NjYzMDU0fGltYWdlL2pwZWd8aDFkL2g1Ni8xMzg1NTc0NTA0ODYwNi5qcGd8MmZiMmFhY2U1NTU4NjVlYzdhODBkNGYzOWY4Y2VlZDcxZmEwN2JmYjYwOTg0NGNiZmRjMGYzYjk5OTY3YTlmNQ",
+            "id_marca": 1,
+            "id_processador": 3,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 10,
+            "nome": "Notebook IdeaPad 3i",
+            "descricao": "Desempenho com propósito",
+            "valor": 2903.99,
+            "img": "https://www.lenovo.com/medias/?context=bWFzdGVyfHJvb3R8NzQxOTd8aW1hZ2UvcG5nfGgyNS9oOTEvMTEzNDI0MTQwMjA2MzgucG5nfGE3OGIxOWFkMGJlYmZkNmM5ODAwOWE2ODYwNDE0ZDFmNTBlMjExZWZhNjI1MmE5YmZiYzVlYzc4OTZhZDJhYjk",
+            "id_marca": 1,
+            "id_processador": 2,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 11,
+            "nome": "Notebook Lenovo V15",
+            "descricao": "Impulsione a produtividade em qualquer lugar",
+            "valor": 4135.99,
+            "img": "https://www.lenovo.com/medias/00-Lenovo-v15-G2-Hero-Principal-1500x1500-300dpi.jpg?context=bWFzdGVyfHJvb3R8NjcyNzg2fGltYWdlL2pwZWd8aGUzL2g5Ni8xMTg5NjUxNDQ0NTM0Mi5qcGd8N2ZlNTM4MmJiODkyZGFkMjM5MzFkMTZiYWQ3OWFkZjRmY2E2NjI1Mjg0ZDkxZDRjNzAwZTUxZTkxZjA0MGQ1Mw",
+            "id_marca": 1,
+            "id_processador": 2,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 12,
+            "nome": "Notebook IdeaPad 3i",
+            "descricao": "Desempenho com propósito",
+            "valor": 2023.99,
+            "img": "https://www.lenovo.com/medias/?context=bWFzdGVyfHJvb3R8NzQxOTd8aW1hZ2UvcG5nfGgyNS9oOTEvMTEzNDI0MTQwMjA2MzgucG5nfGE3OGIxOWFkMGJlYmZkNmM5ODAwOWE2ODYwNDE0ZDFmNTBlMjExZWZhNjI1MmE5YmZiYzVlYzc4OTZhZDJhYjk",
+            "id_marca": 1,
+            "id_processador": 1,
+            "id_ram": 1,
+            "id_tela": 2
+        },
+        {
+            "id" : 13,
+            "nome": "Notebook Lenovo V15",
+            "descricao": "Pronto para os negócios",
+            "valor": 4232.79,
+            "img": "https://www.lenovo.com/medias/Notebook-Lenovo-V15-2.jpg?context=bWFzdGVyfHJvb3R8NDY0NDU1fGltYWdlL2pwZWd8aGRiL2hmNy8xMTgxMDQxNjI2MzE5OC5qcGd8ZTBmMzQ0YTNmZjkyN2FlOTM3NjQxZjNlNWFiYWFmY2M3MDAyMTFiNTEzY2MyZjRjYTk5MmM0MmJhMzE4MGUxOQ",
+            "id_marca": 1,
+            "id_processador": 3,
+            "id_ram": 1,
+            "id_tela": 2
+        },
+        {
+            "id" : 14,
+            "nome": "Galaxy Book2 Pro",
+            "descricao": "O Galaxy Book2 Pro é um notebook fino e com alto desempenho.",
+            "valor": 14999.90,
+            "img": "https://images.samsung.com/is/image/samsung/p6pim/br/np950xee-xa1br/gallery/br-galaxy-book2-pro-15inch-arc-np950xeez-np950xee-xa1br-533252408?$592_472_PNG$",
+            "id_marca": 2,
+            "id_processador": 3,
+            "id_ram": 4,
+            "id_tela": 2
+        },
+        {
+            "id" : 15,
+            "nome": "Samsung Galaxy Book2",
+            "descricao": "O que está no seu celular, agora no seu PC",
+            "valor": 4399.90,
+            "img": "https://images.samsung.com/is/image/samsung/p6pim/br/np550xed-ks2br/gallery/br-galaxy-book2-np550xed-431979-np550xed-ks2br-533252562?$684_547_PNG$",
+            "id_marca": 2,
+            "id_processador": 2,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 16,
+            "nome": "Samsung Galaxy Book2",
+            "descricao": "O que está no seu celular, agora no seu PC",
+            "valor": 5199.00,
+            "img": "https://images.samsung.com/is/image/samsung/p6pim/br/np550xed-ks2br/gallery/br-galaxy-book2-np550xed-431979-np550xed-ks2br-533252562?$684_547_PNG$",
+            "id_marca": 2,
+            "id_processador": 3,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 17,
+            "nome": "Galaxy Book2",
+            "descricao": "O que está no seu celular, agora no seu PC",
+            "valor": 5199.00,
+            "img": "https://images.samsung.com/is/image/samsung/p6pim/br/np550xed-ks2br/gallery/br-galaxy-book2-np550xed-431979-np550xed-ks2br-533252562?$684_547_PNG$",
+            "id_marca": 2,
+            "id_processador": 3,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 18,
+            "nome": "O Galaxy Book2 360 eleva a sua produtividade para outro nível",
+            "descricao": "O que está no seu celular, agora no seu PC",
+            "valor": 5669.10,
+            "img": "https://a-static.mlcdn.com.br/618x463/notebook-samsung-book2-360-13-3-full-hd-i5-16gb-1tb-ssd-windows-11-home-np730qed-kf1br-grafite/primetek/023509/03f037d910f312e699e8bd5c6fb1c46d.jpeg",
+            "id_marca": 2,
+            "id_processador": 2,
+            "id_ram": 4,
+            "id_tela": 2
+        },
+        {
+            "id" : 19,
+            "nome": "Samsung Galaxy Book2",
+            "descricao": "Galaxy Book2",
+            "valor": 3699.00,
+            "img": "https://samsungbr.vtexassets.com/arquivos/ids/339974-800-auto?v=637962848786100000&width=800&height=auto&aspect=true",
+            "id_marca": 2,
+            "id_processador": 1,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 20,
+            "nome": "Acer Aspire 3",
+            "descricao": "Notebook Acer Aspire 3 A315-58-38SD Intel Core I3 4GB 256 GB SSD Tela 15,6 Full HD Windows 11",
+            "valor": 2330.10,
+            "img": "https://carrefourbr.vtexassets.com/arquivos/ids/75281354-540-auto?v=637992029654830000&width=540&height=auto&aspect=true",
+            "id_marca": 4,
+            "id_processador": 1,
+            "id_ram": 1,
+            "id_tela": 2
+        },
+        {
+            "id" : 21,
+            "nome": "Acer Aspire 5",
+            "descricao": "Notebook Acer Aspire 5 A514-54-324N Intel Core i3 11ª Gen Linux Gutta 4GB",
+            "valor": 2495.04,
+            "img": "https://www.fastshop.com.br//wcsstore/FastShopCAS/images/catalog/3002099038_PRD/3002099038_PRD_447_2.jpeg",
+            "id_marca": 4,
+            "id_processador": 1,
+            "id_ram": 1,
+            "id_tela": 1
+        },
+        {
+            "id" : 22,
+            "nome": "Acer Aspire 3",
+            "descricao": "Notebook Acer A315-56-3478 I3 4GB 256GB W11 Nx.hv1al.00m",
+            "valor": 2718.90,
+            "img": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/315390/Notebook-Acer-A315-56-3478-I3-4GB-256GB-Tela-15-6-Windows-11-NX-HV1AL-00M_1676461169_gg.jpg",
+            "id_marca": 4,
+            "id_processador": 1,
+            "id_ram": 1,
+            "id_tela": 1
+        },
+        {
+            "id" : 23,
+            "nome": "Acer Aspire 5",
+            "descricao": "Notebook Acer Aspire 5 A514-54-397J Intel Core i3 11ª Gen Windows 11 Home 8GB",
+            "valor": 2783.04,
+            "img": "https://www.fastshop.com.br//wcsstore/FastShopCAS/images/catalog/3000895093_PRD/3000895093_PRD_447_1.jpeg",
+            "id_marca": 4,
+            "id_processador": 1,
+            "id_ram": 2,
+            "id_tela": 1
+        },
+        {
+            "id" : 24,
+            "nome": "Acer Aspire 5",
+            "descricao": "Notebook Acer Aspire 5 Intel Core i5-1035G1 SUAS TAREFAS COM MAIS FLUIDEZ!",
+            "valor": 3199.99,
+            "img": "https://images.kabum.com.br/produtos/fotos/184924/notebook-acer-aspire-5-intel-core-i5-4gb-ram-ssd-256gb-14-0-hd-windows-10-hsl-prata-a514-53-5239_1628020555_gg.jpg",
+            "id_marca": 4,
+            "id_processador": 2,
+            "id_ram": 1,
+            "id_tela": 1
+        },
+        {
+            "id" : 25,
+            "nome": "Acer Aspire Vero AV15-51-53AP",
+            "descricao": "Projeto Sustentável Acer Aspire Vero",
+            "valor": 3299.00,
+            "img": "https://carrefourbr.vtexassets.com/arquivos/ids/74867363-540-auto?v=637988442053400000&width=540&height=auto&aspect=true",
+            "id_marca": 4,
+            "id_processador": 2,
+            "id_ram": 2,
+            "id_tela": 2
+        },
+        {
+            "id" : 26,
+            "nome": "Acer Predator Triton 300 SE PT314-52s-761Z",
+            "descricao": "A Acer acaba de trazer para o mercado nacional os novos Predator Triton 300 SE que buscam uma identidade visual bastante minimalista e compacta, porém, sem abrir mão de algumas linhas mais agressivas, por exemplo: as saídas de ar.",
+            "valor": 16919.00,
+            "img": "https://acerstore.vtexassets.com/arquivos/ids/161189-800-auto?v=637951498473270000&width=800&height=auto&aspect=true",
+            "id_marca": 4,
+            "id_processador": 3,
+            "id_ram": 4,
+            "id_tela": 1
+        },
+        {
+            "id" : 27,
+            "nome": "Acer Aspire Nitro 5 AN515-55-705U",
+            "descricao": "O Acer Aspire Nitro 5 AN515-55-705U é mais um integrante da grandiosa e popular família Nitro 5 de notebooks da linha gamer da fabricante.",
+            "valor": 8999.00,
+            "img": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/220334/Notebook-Acer-Aspire-Nitro-5-Intel-Core-I7-10750h-8Gb-512Gb-Ssd-15-6-Gtx-1660ti-Preto-E-Vermelho-An515-55-705u_1663985928_gg.jpg",
+            "id_marca": 4,
+            "id_processador": 3,
+            "id_ram": 2,
+            "id_tela": 2
+        }
+        
+        
+        
     ],
     "ram": [
         {
-            "id": "",
-            "ram": ""
+            "id": "1",
+            "ram": "4 GB"
+        },
+        {
+            "id": "2",
+            "ram": "8 GB"
+        },
+        {
+            "id": "3",
+            "ram": "12 GB"
+        },
+        {
+            "id": "4",
+            "ram": "16 GB"
         }
     ],
     "tela": [
         {
-            "id": "",
-            "tela": ""
+            "id": "1",
+            "tela": "14"
+        },
+        {
+            "id": "2",
+            "tela": "15,6"
         }
     ],
     "usuarios": [
@@ -100,7 +446,7 @@
             "id": "2",
             "nome": "jeanaguanabara@gmail.com",
             "senha": "$2a$10$jiPYFqZ3c95r5VJ.xf2QduO0lgkhAC7TafSfkkvY64/R94ucZzQfq"
-           }
+        }
       
        
      

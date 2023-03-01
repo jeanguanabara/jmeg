@@ -27,6 +27,8 @@ router.get('/cadastro', isClienteLogado, HomeController.showCadastro)
 router.get('/homecliente',isClienteLogado,  HomeController.showHomeCliente)
 router.get('/editameucadastro',isClienteLogado,  HomeController.showEditaMeuCadastro)
 router.get('/meuspedidos',isClienteLogado,  HomeController.showMeusPedidos)
+
+
 //
 
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS
