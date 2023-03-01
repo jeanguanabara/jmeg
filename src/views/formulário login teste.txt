@@ -1,5 +1,5 @@
         <%if (urlDestino !== "undefined") { console.log(urlDestino + " ejs login")%>
-            <form class="rounded-4 text-center bg-white p-5" action="<%urlDestino%>" id="formLoginCliente" method="POST">
+            <form class="rounded-4 text-center bg-white p-5" action="<%=urlDestino%>" id="formLoginCliente" method="POST">
         <%} else { console.log("não veio urLDestino ejs login")%>
             <form class="rounded-4 text-center bg-white p-5" action="/homecliente" id="formLoginCliente" method="POST">
             <%}%>
