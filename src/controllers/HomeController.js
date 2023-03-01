@@ -6,11 +6,11 @@ const HomeController = {
         return res.render("index", {produtos: ProdutosModel.FindAll()})
     },
     showConsultaProd:(req,res)=> {
-        console.log(req.url)
+        
         return res.render("consultaProdutos")
     },
     showMeuCarrinho: (req, res)=>{
-        return res.render("meuCarrinho")
+        return res.render("meuCarrinho", {clienteLogado: req.session.cliente})
     },
     showLogin:(req, res)=>{
         return res.render("login")
