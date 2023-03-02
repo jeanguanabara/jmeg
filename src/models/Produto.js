@@ -47,20 +47,6 @@ module.exports = (sequelize, DataTypes) => {
 }
 
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*const db = require('../database/db.json')
 
 const ProdutosModel = {
