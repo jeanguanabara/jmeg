@@ -1,13 +1,11 @@
-const produtosModel = require('../database/db.json');
-const ProdutosModel = require('../database/produtosModel');
+
+const ProdutosModel = require('../models/ProdutoModel');
 
 const HomeController = {
     showHomePage: (req,res)=> {
-        const produtos = produtosModel.FindAll();
         
-        return res.render("index", {
-            produtos
-        })
+        console.log(ProdutosModel.findHomeMenorValor())
+        return res.render("index")
        
     },
     showConsultaProd:(req,res)=> {
