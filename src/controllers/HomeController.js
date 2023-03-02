@@ -1,5 +1,5 @@
-const produtosModel = require('../database/produtosModel');
-const ProdutosModel = require('../models/ProdutosModel');
+const produtosModel = require('../database/db.json');
+const ProdutosModel = require('../database/produtosModel');
 
 const HomeController = {
     showHomePage: (req,res)=> {
