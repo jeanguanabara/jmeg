@@ -4,8 +4,10 @@
     "ejs": "~3.1.8",
     "express": "~4.18.2",
     "express-session": "~1.17.3",
+    "mysql2": "^3.1.2",
     "nodemon": "~2.0.20",
-    "path": "~0.12.7"
+    "path": "~0.12.7",
+    "sequelize": "^6.29.0"
   },
   "name": "jmeg",
   "version": "1.0.0",
@@ -26,5 +28,8 @@
   },
   "homepage": "https://github.com/jeanguanabara/jmeg#readme",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "sequelize-cli": "^6.6.0"
+  }
 }
