@@ -8,6 +8,7 @@ const AuthController = require('../controllers/AuthController')
 //VARIÁVEIS, MAS AQUI NA ROTA AO INVÉS DE SÓ COLOCAR APP = EXPRESS(), vai ser a função Router() que vou precisar
 const router = express.Router();//Aqui puxo especificadamente a função Router() de dentro do express
 
+
 //MIDDLEWARES
 const VerificaLoginClienteMiddlaware = require('../middlewares/VerificaLoginCliente')
 const isClienteLogado = require('../middlewares/isClienteLogado')
@@ -20,8 +21,9 @@ router.get('/ConsultaProd', HomeController.showConsultaProd)
 router.post('/homecliente',VerificaLoginClienteMiddlaware, AuthController.loginCliente)
 router.get('/itemvenda', HomeController.showItemVenda)
 
+
 router.get('/homecliente',isClienteLogado, HomeController. showHomeCliente)
-router.get('/meuCarrinho',isClienteLogado,  HomeController.showMeuCarrinho)
+router.get('/meucarrinho',isClienteLogado,  HomeController.showMeuCarrinho)
 router.get('/login',isClienteLogadoLogin,  HomeController.showLogin)
 router.get('/cadastro', isClienteLogado, HomeController.showCadastro)
 router.get('/homecliente',isClienteLogado,  HomeController.showHomeCliente)
