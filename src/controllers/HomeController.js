@@ -1,9 +1,14 @@
-const ProdutosModel = require('../models/ProdutosModel')
+const produtosModel = require('../database/produtosModel');
+const ProdutosModel = require('../models/ProdutosModel');
 
 const HomeController = {
     showHomePage: (req,res)=> {
+        const produtos = produtosModel.FindAll();
         
-        return res.render("index", {produtos: ProdutosModel.FindAll()})
+        return res.render("index", {
+            produtos
+        })
+       
     },
     showConsultaProd:(req,res)=> {
         console.log(req.url)
