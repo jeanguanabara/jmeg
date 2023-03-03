@@ -22,7 +22,12 @@ const HomeController = {
         return res.render("cadastro")
     },
     showItemVenda:(req, res)=>{
-        return res.render("itemVenda")
+
+        let {id} = req.params
+        
+        
+
+        return res.render("itemVenda", {item: ProdutosModel.findbyID(id),complementos: ProdutosModel.findComplementos()})
     },
     showHomeCliente:(req, res)=>{
         return res.render("homecliente", {clienteLogado: req.session.cliente})

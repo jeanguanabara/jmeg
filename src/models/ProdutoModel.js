@@ -41,6 +41,20 @@ const ProdutoModel = {
         itensMenorValor = produtos.sort(valorMenor)
         
         return itensMenorValor.slice(0,3)
+    },
+    findbyID: (id)=> {
+        let produto = db.produtos.find(elemento => elemento.id === id)
+
+        return produto
+
+
+    },
+    findComplementos: () => {
+        let marca = db.marca
+        let processador = db.processador
+        let ram = db.ram
+        let tela = db.tela
+        return {marca, processador, ram, tela}
     }
 }
 

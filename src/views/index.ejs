@@ -12,13 +12,13 @@
           <%if (typeof itensMenorValor !== "undefined") {%>
           
             <%for (let i in itensMenorValor) {%>
-            <div class="mNPItem">
+            <a href="/itemvenda/<%=itensMenorValor[i].id%>" class="mNPItem" style="text-decoration: none;">
             <div class="mNPItemPic">
               <img src="<%=itensMenorValor[i].img%>" alt="Imagem Produto" />
             </div>
             <div class="mNPItemDesc"><%=itensMenorValor[i].nome%></div>
             <div class="mNPItemVlr"><strong>R$ <%=itensMenorValor[i].valor%></strong></div>
-          </div>
+          </a>
           <%}%>
           <%}%>
         </div>
@@ -44,7 +44,7 @@
             <%if (typeof itensMaisRecentes !== "undefined") {%> 
 
               <%for (let i in itensMaisRecentes){%>
-          <div class="mPBItem">
+          <a href="/itemvenda/<%=itensMaisRecentes[i].id%>" class="mPBItem" style="text-decoration: none;">
             <div class="mPBItemImg-Comprar">
               <div class="mPBItemIMG">
                 <img
@@ -57,7 +57,7 @@
               </div>
             </div>
             <div class="mPBItemDesc"><%=itensMaisRecentes[i].nome%></div>
-          </div>
+          </a>
           <%}%>
           <%}%>
           
