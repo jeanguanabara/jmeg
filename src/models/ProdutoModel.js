@@ -11,8 +11,36 @@ const ProdutoModel = {
     },
     findHomeMenorValor : () => {
         let produtos = db.produtos
-        console.log(produtos)
+        
+
+        function valorMenor(a,b){
+            
+            return (a.valor-b.valor)
+        }
+        
+        let itensMenorValor = produtos.sort(valorMenor)
+        
+       
+
+        
+       
+        return itensMenorValor.slice(0,3)
+
           
+    },
+    findHomeMaisRecentes: () => {
+        let produtos = db.produtos
+
+        
+        function valorMenor(a,b){
+            
+            return (b.id - a.id)
+        }
+
+
+        itensMenorValor = produtos.sort(valorMenor)
+        
+        return itensMenorValor.slice(0,3)
     }
 }
 

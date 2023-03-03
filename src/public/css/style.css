@@ -152,11 +152,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 20rem;
+  height: 15rem;
+
 
 }
 
 .mNPItemPic img {
-  width: 80%;
+  width: 60%;
 }
 
 
@@ -191,6 +194,8 @@ main {
   margin: 2%;
   cursor: pointer;
   transition: 1s;
+  width: 18em;
+  
 }
 
 .mPBItem:hover {

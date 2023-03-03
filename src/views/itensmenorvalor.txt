@@ -1,0 +1,41 @@
+          <div class="mNPItem">
+            <div class="mNPItemPic">
+              <img src="/img/avif/dell-teste.avif" alt="Img Dell Teste" />
+            </div>
+            <div class="mNPItemDesc">Notebook Vostro 3520</div>
+            <div class="mNPItemVlr"><strong>R$ 4699,00</strong></div>
+          </div>
+          
+
+
+
+
+
+          <div class="mPBItem">
+            <div class="mPBItemImg-Comprar">
+              <div class="mPBItemIMG">
+                <img
+                  src="/img/avif/dell-teste.avif"
+                  alt="Imagem Dell teste"
+                />
+              </div>
+              <div class="mPBItemVlr" id="mPBItemVlr">
+                <strong>R$ 4699,00</strong>
+              </div>
+            </div>
+            <div class="mPBItemDesc">Notebook Vostro 3520</div>
+          </div>
+          <div class="mPBItem">
+            <div class="mPBItemImg-Comprar">
+              <div class="mPBItemIMG">
+                <img
+                  src="/img/avif/dell-teste.avif"
+                  alt="Imagem Dell teste"
+                />
+              </div>
+              <div class="mPBItemVlr" id="mPBItemVlr">
+                <strong>R$ 4699,00</strong>
+              </div>
+            </div>
+            <div class="mPBItemDesc">Notebook Vostro 3520</div>
+          </div>

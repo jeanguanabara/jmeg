@@ -4,8 +4,8 @@ const ProdutosModel = require('../models/ProdutoModel');
 const HomeController = {
     showHomePage: (req,res)=> {
         
-        console.log(ProdutosModel.findHomeMenorValor())
-        return res.render("index")
+        console.log()
+        return res.render("index", {itensMenorValor: ProdutosModel.findHomeMenorValor(), itensMaisRecentes: ProdutosModel.findHomeMaisRecentes()})
        
     },
     showConsultaProd:(req,res)=> {

@@ -8,27 +8,19 @@
     <main>
       <section class="container">
         <div class="mNewProdutos">
-          <div class="mNPItem">
+          
+          <%if (typeof itensMenorValor !== "undefined") {%>
+          
+            <%for (let i in itensMenorValor) {%>
+            <div class="mNPItem">
             <div class="mNPItemPic">
-              <img src="/img/avif/dell-teste.avif" alt="Img Dell Teste" />
+              <img src="<%=itensMenorValor[i].img%>" alt="Imagem Produto" />
             </div>
-            <div class="mNPItemDesc">Notebook Vostro 3520</div>
-            <div class="mNPItemVlr"><strong>R$ 4699,00</strong></div>
+            <div class="mNPItemDesc"><%=itensMenorValor[i].nome%></div>
+            <div class="mNPItemVlr"><strong>R$ <%=itensMenorValor[i].valor%></strong></div>
           </div>
-          <div class="mNPItem">
-            <div class="mNPItemPic">
-              <img src="/img/avif/dell-teste.avif" alt="Img Dell Teste" />
-            </div>
-            <div class="mNPItemDesc">Notebook Vostro 3520</div>
-            <div class="mNPItemVlr"><strong>R$ 4699,00</strong></div>
-          </div>
-          <div class="mNPItem">
-            <div class="mNPItemPic">
-              <img src="/img/avif/dell-teste.avif" alt="Img Dell Teste" />
-            </div>
-            <div class="mNPItemDesc">Notebook Vostro 3520</div>
-            <div class="mNPItemVlr"><strong>R$ 4699,00</strong></div>
-          </div>
+          <%}%>
+          <%}%>
         </div>
         <div class="mBanner">
           <img src="/img/svg/banner-promocional.svg" alt="Frete Grátis" />
@@ -48,48 +40,27 @@
           </div>
         </div>
         <div class="mProdutosBaratos">
+
+            <%if (typeof itensMaisRecentes !== "undefined") {%> 
+
+              <%for (let i in itensMaisRecentes){%>
           <div class="mPBItem">
             <div class="mPBItemImg-Comprar">
               <div class="mPBItemIMG">
                 <img
-                  src="/img/avif/dell-teste.avif"
-                  alt="Imagem Dell teste"
+                  src="<%=itensMaisRecentes[i].img%>"
+                  alt="Imagem Produto" width="80%" height="80%"
                 />
               </div>
               <div class="mPBItemVlr" id="mPBItemVlr">
-                <strong>R$ 4699,00</strong>
+                <strong>R$ <%=itensMaisRecentes[i].valor%></strong>
               </div>
             </div>
-            <div class="mPBItemDesc">Notebook Vostro 3520</div>
+            <div class="mPBItemDesc"><%=itensMaisRecentes[i].nome%></div>
           </div>
-          <div class="mPBItem">
-            <div class="mPBItemImg-Comprar">
-              <div class="mPBItemIMG">
-                <img
-                  src="/img/avif/dell-teste.avif"
-                  alt="Imagem Dell teste"
-                />
-              </div>
-              <div class="mPBItemVlr" id="mPBItemVlr">
-                <strong>R$ 4699,00</strong>
-              </div>
-            </div>
-            <div class="mPBItemDesc">Notebook Vostro 3520</div>
-          </div>
-          <div class="mPBItem">
-            <div class="mPBItemImg-Comprar">
-              <div class="mPBItemIMG">
-                <img
-                  src="/img/avif/dell-teste.avif"
-                  alt="Imagem Dell teste"
-                />
-              </div>
-              <div class="mPBItemVlr" id="mPBItemVlr">
-                <strong>R$ 4699,00</strong>
-              </div>
-            </div>
-            <div class="mPBItemDesc">Notebook Vostro 3520</div>
-          </div>
+          <%}%>
+          <%}%>
+          
         </div>
       </section>
       
