@@ -22,6 +22,14 @@ router.post('/homecliente',VerificaLoginClienteMiddlaware, AuthController.loginC
 router.get('/itemvenda', HomeController.showItemVenda)
 
 
+
+router.post('/meucarrinho',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showMeuCarrinho)
+router.post('/login',isClienteLogadoLogin, HomeController.showLogin)
+router.post('/cadastro', VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showCadastro)
+router.post('/homecliente',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showHomeCliente)
+router.post('/editameucadastro',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showEditaMeuCadastro)
+router.post('/meuspedidos',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showMeusPedidos)
+
 router.get('/homecliente',isClienteLogado, HomeController. showHomeCliente)
 router.get('/meucarrinho',isClienteLogado,  HomeController.showMeuCarrinho)
 router.get('/login',isClienteLogadoLogin,  HomeController.showLogin)
