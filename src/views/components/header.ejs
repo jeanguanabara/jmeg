@@ -70,19 +70,21 @@
                 /><!--FALTA COLOCAR O LINK PARA EFETUAR A PESQUISA--></a
               >
             </div>
-            <div class="hBusca">
+            <form class="hBusca" action="/constaprod/" id="formConsultaProdutoNome" >
               <input
                 type="text"
                 class="hTxtBusca"
                 placeholder="o que procura hoje?"
+                id="txtBuscaProdutoNome"
+                name="txtBuscaProdutoNome"
               />
-              <a href="/consultaprod"
-                ><!--FALTA COLOCAR O LINK PARA EFETUAR A PESQUISA--><img
+              <button style="background-color: rgba(0,0,0,0.0); color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" 
+               type="submit" form="formConsultaProdutoNome"><img
                   src="/img/svg/lupa-search-ico.svg"
                   alt="buscar"
                   class="hImgBusca"
-              /></a>
-            </div>
+              /></button>
+            </form>
             <div class="hFav">
               <a href="#">
                 <div class="hFavImg">

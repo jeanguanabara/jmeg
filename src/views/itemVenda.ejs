@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include ("./components/head.ejs") %> 
+<html lang="pt-BR">
+  <head>
+    <title>JMEG NOTEBOOKS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </head>
 <body>
 
     <%- include("./components/header.ejs")%>
 
     <main>
-
-        <section class="container bg-white rounded p-2">
+<%if (typeof item !== "undefined"){%>
+  <%if (typeof complementos !== "undefined"){%>
+        <section class="container bg-white rounded p-2" > 
            <section class="d-flex flex-row justify-content-between align-items-center m-3">
              <div class="imagem-item-venda m-1">
-                <img src="/img/avif/dell-teste.avif" class="img-thumbnail" alt="Imagem Produto">  
+                <img src="<%=item.img%>" class="img-thumbnail" alt="Imagem Produto">  
              </div>
              <div class="p-5 m-6">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title text-black">Nome produto</h5>
+                      <h5 class="card-title text-black"><%=item.nome%></h5>
                       <div class="card-text text-black d-flex flex-row">
                         <p class="m-1">R$</p>
-                        <p class="m-1">5000,00</p>
+                        <p class="m-1"><%=item.valor%></p>
                       </div>
                       
                       <a href="/meucarrinho" class="btn btn-primary">COMPRAR</a>
@@ -28,10 +36,8 @@
            </section> 
            <section class="m-3">
             <div class="w-100 p-5  card text-black">
-                <h1 class="display-4 fw-normal">Nome do Produto</h1>
-                <p class="lead fw-normal">UMA DESCRICAO BEM GRANDE SOBRE O PRODUTO COPIADA DO SITE DO FABRICANTE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id nisi iure deserunt obcaecati esse nam. Laborum exercitationem minima assumenda ipsum labore, quibusdam ipsa voluptate ratione iure quod consectetur necessitatibus tempore.
-                Quod, doloremque saepe. Aut sed quos aspernatur, sunt quas magni qui aliquam! Excepturi voluptatum soluta voluptates voluptate error animi fuga accusantium nostrum eveniet. Inventore sequi deleniti eveniet obcaecati? Inventore, recusandae.
-                Cum rem officiis, ratione eaque architecto commodi necessitatibus nisi fuga repellat aperiam nostrum doloribus ex mollitia a non maxime, atque blanditiis odit? Excepturi, quae debitis autem repellendus suscipit beatae a.</p>
+                <h1 class="display-4 fw-normal"><%=item.nome%></h1>
+                <p class="lead fw-normal"><%=item.descricao%></p>
                
             </div>
 
@@ -52,10 +58,11 @@
                     
                   </tr>
                   <tr>
-                    <td>DELL</td>
-                    <td>CORE I3 12ª</td>
-                    <td>8GB</td>
-                    <td>15.6</td>
+                    
+                    <td><%=complementos.marca.find(elemento => elemento.id == item.id_marca).marca%></td>
+                    <td><%=complementos.processador.find(elemento => elemento.id == item.id_processador).processador%></td>
+                    <td><%=complementos.ram.find(elemento => elemento.id == item.id_ram).ram%></td>
+                    <td><%=complementos.tela.find(elemento => elemento.id == item.id_tela).tela%>"</td>
                   </tr>
                   
                 </tbody>
@@ -65,7 +72,8 @@
            </section>
 
         </section>
-
+<%}%>
+<%}%>
 
     </main>
 

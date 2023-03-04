@@ -43,8 +43,11 @@ const ProdutoModel = {
         return itensMenorValor.slice(0,3)
     },
     findbyID: (id)=> {
-        let produto = db.produtos.find(elemento => elemento.id === id)
 
+
+        let produto = db.produtos.find(elemento => elemento.id == id)
+        
+        console.log(produto)
         return produto
 
 

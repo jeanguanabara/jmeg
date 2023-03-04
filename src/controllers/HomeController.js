@@ -9,6 +9,8 @@ const HomeController = {
        
     },
     showConsultaProd:(req,res)=> {
+
+        console.log(req.params)
         
         return res.render("consultaProdutos")
     },
@@ -25,9 +27,10 @@ const HomeController = {
 
         let {id} = req.params
         
-        
+        console.log(ProdutosModel.findbyID(id))
+        console.log(ProdutosModel.findComplementos())
 
-        return res.render("itemVenda", {item: ProdutosModel.findbyID(id),complementos: ProdutosModel.findComplementos()})
+        return res.render("itemVenda", {item: ProdutosModel.findbyID(id),complementos: ProdutosModel.findComplementos()} )
     },
     showHomeCliente:(req, res)=>{
         return res.render("homecliente", {clienteLogado: req.session.cliente})
