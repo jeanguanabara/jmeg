@@ -11,6 +11,7 @@ const HomeController = {
     showConsultaProd:(req,res)=> {
 
         
+        
         console.log(req.params)
         
         switch (req.params.parametro) {
@@ -37,7 +38,9 @@ const HomeController = {
         return res.render("meuCarrinho", {clienteLogado: req.session.cliente})
     },
     showLogin:(req, res)=>{
-        return res.render("login")
+        return res.render("login", {urlDestino: "undefined"})
+
+        
     },
     showCadastro:(req, res)=>{
         return res.render("cadastro")
