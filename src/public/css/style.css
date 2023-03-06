@@ -85,17 +85,24 @@
   font-weight: bold;
 }
 
-.hDown div {
+.hDown div, .hDMenuAll {
   width: 100%;
   text-align: center;
   transition: 1.5s;
+  text-decoration: none;
+  text-decoration-color: none;
+  color: black
 }
 
-.hDown div:hover {
+
+.hDown div:hover, .hDMenuAll:hover {
+  text-decoration-color: none;
+  text-decoration: none;
   transition: 0.5s;
   cursor: pointer;
   background-color: #749c94;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: black;
 }
 
 
@@ -254,6 +261,12 @@ main {
 
 .imagem-item-venda {
   width: 30vw;
+}
+
+.noProduct {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

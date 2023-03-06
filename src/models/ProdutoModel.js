@@ -9,6 +9,10 @@ const ProdutoModel = {
         let produtos = db.produtos
         return {marca, processador, ram, tela, produtos}
     },
+    findAllProdutos: ()=> {
+        return db.produtos
+    }
+    ,
     findHomeMenorValor : () => {
         let produtos = db.produtos
         
@@ -58,6 +62,25 @@ const ProdutoModel = {
         let ram = db.ram
         let tela = db.tela
         return {marca, processador, ram, tela}
+    },
+    findByBome: (nome) => {
+        let produtos = db.produtos
+
+        let resultadoPesquisa = []
+
+        for (let i in produtos){
+            let consultaItem = produtos[i].nome.toLowerCase()
+            if (consultaItem.includes(nome)){
+                resultadoPesquisa.push(produtos[i])
+            }
+        }
+
+        if (resultadoPesquisa.length > 0) {
+            return resultadoPesquisa
+        }else{
+            return undefined
+        }
+        
     }
 }
 

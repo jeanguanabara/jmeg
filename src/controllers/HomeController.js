@@ -10,9 +10,28 @@ const HomeController = {
     },
     showConsultaProd:(req,res)=> {
 
+        
         console.log(req.params)
         
-        return res.render("consultaProdutos")
+        switch (req.params.parametro) {
+            case "nome":
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByBome(req.query.txtBuscaProdutoNome)})
+                
+            case "todos":
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findAllProdutos()})
+            
+            case "processador": 
+                        
+        }
+        
+        if (req.params.parametro === "nome") {
+            
+            
+        }
+        
+        
+        
+        
     },
     showMeuCarrinho: (req, res)=>{
         return res.render("meuCarrinho", {clienteLogado: req.session.cliente})

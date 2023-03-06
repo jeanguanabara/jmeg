@@ -11,14 +11,33 @@
             </section>
 
             <section class="card-produtos d-flex flex-wrap justify-content-between">
-                <%- include("./components/teste.ejs")  %> 
-                <%- include("./components/teste.ejs")  %> 
-                <%- include("./components/teste.ejs")  %> 
-                <%- include("./components/teste.ejs")  %> 
-                <%- include("./components/teste.ejs")  %> 
-                <%- include("./components/teste.ejs")  %> 
-                <%- include("./components/teste.ejs")  %> 
-                <%- include("./components/teste.ejs")  %> 
+               
+
+                <%if (typeof itensPesquisados !== "undefined"){%>
+
+                    <%for (let i in itensPesquisados){%>
+
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="<%=itensPesquisados[i].img%>" class="card-img-top" alt="Imagem Produto">
+                    <div class="card-body card-item-lancado">
+                      <h5 class="card-title text-secondary"><strong><%=itensPesquisados[i].nome%></strong></h5>
+                      <p class="card-text text-secondary">R$ <%=itensPesquisados[i].valor%></p>
+                      
+                      <a href="/meucarrinho" class="btn btn-outline-primary m-1">Comprar - falta fazer</a>
+                      <a href="/itemvenda/<%=itensPesquisados[i].id%>" class="btn btn-outline-primary m-1">Ver mais</a>
+                    </div>
+                  </div>
+
+                  <%}%>
+                  <%}else {%>
+
+                    <div class="pt-5 pb-5 mt-5 mb-5 noProduct">
+                        <img src="/img/png/no-product.png" alt="Produto não encontrado" class="text-center">
+                        
+                    </div>
+                    
+
+                    <%}%>
 
 
             </section>
