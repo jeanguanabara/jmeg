@@ -81,6 +81,43 @@ const ProdutoModel = {
             return undefined
         }
         
+    },
+    findByMarca: (marca) => {
+      
+
+        let marcaConsultada = db.marca.find(element => element.marca === marca.toString().toUpperCase())        
+        let resultadoPesquisaMarca = []
+        
+        for (let i in db.produtos){
+           
+            if (db.produtos[i].id_marca === marcaConsultada.id){
+                resultadoPesquisaMarca.push(db.produtos[i])
+            }
+        }
+              
+        if (resultadoPesquisaMarca.length > 0) {
+            return resultadoPesquisaMarca
+        }else{
+            return undefined
+        }
+                
+    },
+    findByProcessador: (processador) => {
+        let processadorConsultado = db.processador.find(element => element.processador === processador.toString().toUpperCase())        
+        let resultadoPesquisaprocessador = []
+        
+        for (let i in db.produtos){
+           
+            if (db.produtos[i].id_processador === processadorConsultado.id){
+                resultadoPesquisaprocessador.push(db.produtos[i])
+            }
+        }
+              
+        if (resultadoPesquisaprocessador.length > 0) {
+            return resultadoPesquisaprocessador
+        }else{
+            return undefined
+        }
     }
 }
 

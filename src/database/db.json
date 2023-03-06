@@ -27,7 +27,7 @@
         ],
        "endereco": [
             {
-                "id": "1",
+                "id": 1,
                 "cep": "88122049",
                 "logradouro": "Rua Rodney Brasil Machado",
                 "numero": "59",
@@ -37,7 +37,7 @@
                 "uf": "SC"
             },
             {
-                "id": "2",
+                "id": 2,
                 "cep": "88060440",
                 "logradouro": "Servidão Valdemiro Francisco Senabio",
                 "numero": "297",
@@ -47,7 +47,7 @@
                 "uf": "SC"
             },
             {
-                "id": "3",
+                "id": 3,
                 "cep": "88060440",
                 "logradouro": "Servidão Valdemiro Francisco Senabio",
                 "numero": "297",
@@ -60,19 +60,19 @@
         ],
         "marca": [
             {
-                "id": "1",
+                "id": 1,
                 "marca": "LENOVO"
             },
             {
-                "id": "2",
+                "id": 2,
                 "marca": "SAMSUNG"
             },
             {
-                "id": "3",
+                "id":3,
                 "marca": "DELL"
             },
             {
-                "id": "4",
+                "id": 4,
                 "marca": "ACER"
             }
         ],
@@ -93,15 +93,15 @@
         ],
         "processador": [
             {
-                "id": "1",
+                "id": 1,
                 "processador": "CORE I3"
             },
             {
-                "id": "2",
+                "id": 2,
                 "processador": "CORE I5"
             },
             {
-                "id": "3",
+                "id": 3,
                 "processador": "CORE I7"
             }
             
@@ -410,41 +410,41 @@
     ],
     "ram": [
         {
-            "id": "1",
+            "id": 1,
             "ram": "4 GB"
         },
         {
-            "id": "2",
+            "id": 2,
             "ram": "8 GB"
         },
         {
-            "id": "3",
+            "id": 3,
             "ram": "12 GB"
         },
         {
-            "id": "4",
+            "id": 4,
             "ram": "16 GB"
         }
     ],
     "tela": [
         {
-            "id": "1",
+            "id": 1,
             "tela": "14"
         },
         {
-            "id": "2",
+            "id": 2,
             "tela": "15,6"
         }
     ],
     "usuarios": [
         {
-         "id": "1",
+         "id": 1,
          "nome": "mauroeckstein@hotmail.com",
          "senha": "$2a$10$zYtkdszXnZQpViW4/n4f/uJE7eoYdDsrhqSeDw3NfwfbGyX/8GoSe"
          
         },
         {
-            "id": "2",
+            "id": 2,
             "nome": "jeanaguanabara@gmail.com",
             "senha": "$2a$10$jiPYFqZ3c95r5VJ.xf2QduO0lgkhAC7TafSfkkvY64/R94ucZzQfq"
         }

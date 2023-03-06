@@ -11,7 +11,8 @@ const HomeController = {
     showConsultaProd:(req,res)=> {
 
         
-        console.log(req.params)
+        
+        
         
         switch (req.params.parametro) {
             case "nome":
@@ -20,14 +21,33 @@ const HomeController = {
             case "todos":
                 return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findAllProdutos()})
             
-            case "processador": 
-                        
+            case "lenovo": 
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+                            
+            case "samsung":
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+
+            case "dell": 
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+
+            case "acer":
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+
+            case "CORE I3":
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+
+            case "CORE I5":
+                return  res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+
+            case "CORE I7":
+                return  res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+
+            default: 
+                return  res.render("consultaProdutos", {itensPesquisados: undefined})
+
         }
         
-        if (req.params.parametro === "nome") {
-            
-            
-        }
+       
         
         
         
@@ -37,7 +57,9 @@ const HomeController = {
         return res.render("meuCarrinho", {clienteLogado: req.session.cliente})
     },
     showLogin:(req, res)=>{
-        return res.render("login")
+        return res.render("login", {urlDestino: "undefined"})
+
+        
     },
     showCadastro:(req, res)=>{
         return res.render("cadastro")
