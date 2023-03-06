@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include ("./components/head.ejs") %>
+    <style>
+    body{
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    main{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+    }
+</style>
+<body>
+    <%- include ("./components/header.ejs")%>
+
+    <main>
+
+     
+           <!--  <form class="rounded-4 text-center bg-white p-5" action="/homecliente" id="formLoginCliente" method="POST"> -->
+         
+             
+                <form class="rounded-4 text-center bg-white p-5" action="<%= urlDestino !== "undefined" ? urlDestino : "/homeadmin" %>" id="formLoginAdmin" method="POST">
+                            
+              
+           
+                <img src="/img/svg/logo-ico.svg" class="m-4">
+                <p>Digite seu email e senha:</p>
+
+                <div class="form-floating text-secondary ">
+                    <input type="email" class="form-control m-2" placeholder="Email" id="vLoginEmailAdmin" name="vLoginEmailAdmin">
+                    <label for="vLoginEmailAdmin">Email</label>
+                </div>
+                
+                <div class="form-floating text-secondary">
+                    <input type="password" class="form-control m-2" placeholder="Senha" id="vLoginSenhaAdmin" name="vLoginSenhaAdmin">
+                    <label for="vLoginSenhaAdmin">Senha</label>
+                </div>
+
+                <% if (typeof error !== "undefined"){ %>    
+                    <p class="text-danger" ><b> <%= error %></b></p>
+                <%}%>
+                
+
+            
+                    
+                
+                <button class="btn btn-primary mt-3 mb-3" type="submit" form="formLoginAdmin">Entrar</button>
+
+           
+        </form>
+    </main>
+
+    <%- include ("./components/footer.ejs")%>
+</body>
+</html>

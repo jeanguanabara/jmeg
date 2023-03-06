@@ -6,7 +6,7 @@ const loginAdmin =  {
     
     findEmail : (email)=>{
         console.log(email + "email informado")
-        for (let i in db.cliente){
+        for (let i in db.usuarios){
             
            if(db.usuarios[i].email === email){
            
