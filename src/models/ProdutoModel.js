@@ -81,6 +81,36 @@ const ProdutoModel = {
             return undefined
         }
         
+    },
+    findByMarca: (marca) => {
+      
+
+        let marcaConsultada = db.marca.find(element => element.marca === marca.toString().toUpperCase())
+
+            console.log(marcaConsultada)
+            console.log(marca.toString().toUpperCase())
+        let resultadoPesquisaMarca = []
+        
+        for (let i in db.produtos){
+
+
+            
+            if (db.produtos[i].id_marca === marcaConsultada.id){
+
+
+
+                resultadoPesquisaMarca.push(db.produtos[i])
+            }
+        }
+
+        
+        if (resultadoPesquisaMarca.length > 0) {
+            return resultadoPesquisaMarca
+        }else{
+            return undefined
+        }
+        
+        
     }
 }
 

@@ -12,7 +12,7 @@ const HomeController = {
 
         
         
-        console.log(req.params)
+        
         
         switch (req.params.parametro) {
             case "nome":
@@ -21,8 +21,15 @@ const HomeController = {
             case "todos":
                 return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findAllProdutos()})
             
-            case "processador": 
-                        
+            case "lenovo": 
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+                            
+            case "samsung":
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+            case "dell": 
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+            case "acer":
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})                        
         }
         
         if (req.params.parametro === "nome") {
