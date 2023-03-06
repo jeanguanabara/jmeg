@@ -6,7 +6,7 @@ const isAdmin = require('../middlewares/isAdmin')
 //VARIÁVEIS, MAS AQUI NA ROTA AO INVÉS DE SÓ COLOCAR APP = EXPRESS(), vai ser a função Router() que vou precisar
 const router = express.Router();//Aqui puxo especificadamente a função Router() de dentro do express
 
-router.use(isAdmin)
+
 //MIDDLEWARE
 const VerificaLoginAdminMiddlaware = require('../middlewares/VerificaLoginAdmin')
 
@@ -16,6 +16,7 @@ const VerificaLoginAdminMiddlaware = require('../middlewares/VerificaLoginAdmin'
 //CRIAÇÃO DAS ROTAS
 
 router.get('/admin', AdminController.showAdmin)
+router.use(isAdmin)
 router.get('/homeadmin', VerificaLoginAdminMiddlaware, AdminController.showHomeAdmin)
 router.get('/produtosadmin', AdminController.showProdutosAdmin)
 router.get('/cadastroproduto', AdminController.showCadastroProduto)
