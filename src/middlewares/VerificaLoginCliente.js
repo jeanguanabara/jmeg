@@ -24,11 +24,11 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
             return next()
         }else {
              //se a senha não bater, vai retornar erro que a senha ta incorreta
-            return res.render('login', {error: "Dados Incorretos"})
+            return res.render('login', {urlDestino: undefined, error: "Dados Incorretos"})
         }
     }else {
         //se o email ta incorreto nem valida senha, só diz que o email ta errado.
-        return res.render('login', {error: "Dados Incorretos"})
+        return res.render('login', {urlDestino: undefined, error: "Dados Incorretos"})
     }
     
     
@@ -37,6 +37,7 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
 
     
     
+
 
 
 

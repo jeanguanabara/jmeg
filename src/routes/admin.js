@@ -22,5 +22,6 @@ router.get('/cadastroproduto', AdminController.showCadastroProduto)
 router.get('/editacaditem', AdminController.showEditaCadItem)
 
 
+
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS
 module.exports = router

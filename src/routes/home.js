@@ -19,7 +19,7 @@ const isClienteLogadoLogin = require('../middlewares/isClienteLogadoLogin')
 //CRIAÇÃO DAS ROTAS
 router.get('/', HomeController.showHomePage)//aqui eu digo que a rota quando vem de um get na página inicial, ele vai puxar uma função do controller onde terão todas essas configurações acopladas. Ficando muito mais fácil daí e mais simples aqui.
 router.get('/consultaprod/:parametro', HomeController.showConsultaProd)
-router.post('/homecliente',VerificaLoginClienteMiddlaware, AuthController.loginCliente)
+router.post('/homecliente',VerificaLoginClienteMiddlaware,  AuthController.loginCliente)
 router.get('/itemvenda/:id', HomeController.showItemVenda)
 
 

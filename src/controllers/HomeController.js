@@ -26,16 +26,28 @@ const HomeController = {
                             
             case "samsung":
                 return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+
             case "dell": 
                 return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+
             case "acer":
-                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})                        
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+
+            case "CORE I3":
+                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+
+            case "CORE I5":
+                return  res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+
+            case "CORE I7":
+                return  res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+
+            default: 
+                return  res.render("consultaProdutos", {itensPesquisados: undefined})
+
         }
         
-        if (req.params.parametro === "nome") {
-            
-            
-        }
+       
         
         
         
