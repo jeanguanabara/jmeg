@@ -11,8 +11,10 @@ const router = express.Router();//Aqui puxo especificadamente a função Router(
 
 //MIDDLEWARES
 const VerificaLoginClienteMiddlaware = require('../middlewares/VerificaLoginCliente')
+const VerificaLoginAdminMiddlaware = require('../middlewares/VerificaLoginAdmin')
 const isClienteLogado = require('../middlewares/isClienteLogado')
-const isClienteLogadoLogin = require('../middlewares/isClienteLogadoLogin')
+const isClienteLogadoLogin = require('../middlewares/isClienteLogadoLogin');
+const isAdminLogadoLogin = require('../middlewares/isAdminLogado');
 
 
 
@@ -31,6 +33,8 @@ router.post('/cadastro', VerificaLoginClienteMiddlaware,isClienteLogado, HomeCon
 router.post('/homecliente',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showHomeCliente)
 router.post('/editameucadastro',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showEditaMeuCadastro)
 router.post('/meuspedidos',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showMeusPedidos)
+
+router.post('/loginadmin', VerificaLoginAdminMiddlaware, isAdminLogadoLogin, AuthController.loginAdmin)
 
 router.get('/homecliente',isClienteLogado, HomeController. showHomeCliente)
 router.get('/meucarrinho',isClienteLogado,  HomeController.showMeuCarrinho)
