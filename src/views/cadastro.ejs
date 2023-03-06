@@ -3,53 +3,7 @@
 
 <%- include('./components/head.ejs') %>
 
-  <style>
 
-body{
-        height: 100vh;
-        width: 100vw;
-    }
-    
-    main{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    h3 {
-        margin-top: 20px;
-        color: black;
-        font-weight: bolder;
-        
-    }
-    .formlario {
-        width: 80%;
-        height: 400px;
-        background-color: red;
-        margin: 0 auto;
-        display: flex;
-    }
-    .form {
-        width: 50%;
-        height: 95%;
-        
-        margin: 0 auto;
-        flex-grow: 1;
-    }
-    label {
-        color: black;
-        font-weight: bold;
-    
-    }
-    
-    button {        
-        margin-bottom: 20px;        
-    }
-    
-    
-  </style>
 
 <body>
     <%- include ("./components/header.ejs") %>
@@ -60,11 +14,11 @@ body{
 
     <div class="" novalidate="">
         <h3>Cadastrar novo Usuário</h3>
-        <form name="fmUsuarios" method="post" action="" onsubmit="return validaCampos()">
+        <form name="fmUsuarios" method="post" action="" >
             
                 
                   <label for="Name" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="Name" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="Name" placeholder="Fulano da Silva"  >
                   
                 
           
@@ -76,7 +30,7 @@ body{
                  
                 >CPF</label>
                 <div class="input-group has-validation">
-                  <input type="text" class="form-control" id="CPF" placeholder="" required="" maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                  <input type="text" class="form-control" id="CPF" placeholder="00000000000"  maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                 
                 </div>
               </div>                    
@@ -90,24 +44,30 @@ body{
 
               
                 <label for="zip" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" placeholder="00000000" required="" maxlength="8" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <input type="text" class="form-control" id="cep" placeholder="00000000"  maxlength="8" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                 
               
               <div class="col-md-2">
                 <label for="country" class="form-label">UF</label>
-                <input type="text" class="form-control" id="uf" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="uf" placeholder="UF"  >
                 
               </div>
   
               <div class="col-md-7">
                 <label for="state" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="cidade" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="cidade" placeholder="CIDADE"  >
                 
               </div>
   
               <div class="col-12">
                 <label for="address" class="form-label">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro" placeholder="Rua a, N 85" required="">
+                <input type="text" class="form-control" id="logradouro" placeholder="Rua a" >
+                
+              </div>
+
+              <div class="col-12">
+                <label for="address" class="form-label">Número</label>
+                <input type="text" class="form-control" id="logradouro" placeholder="N 85" >
                 
               </div>
   
@@ -117,10 +77,16 @@ body{
               </div>              
                 
             </div>
+
+            <div class="col-12 mt-3 pt-2 border-top">
+              
+              <label>Email:</label><br>
+                 <input type="email" name="txtLogin" class="form-control" maxlength="50"><br>
+
+            </div>
   
             
-                 <label>Login:</label><br>
-                 <input type="text" name="txtLogin" class="form-control" maxlength="30"><br>
+                 
             
 
             <div class="col-12">
@@ -134,7 +100,7 @@ body{
             </di>
             
             </select>
-            <button type="submit" name="btnSubmitUsuario" class="btn btn-primary" w-100>Cadastrar Usuário</button></a>
+            <button type="submit" name="btnSubmitUsuario" class="btn btn-primary" style="width: 100%;">Cadastrar Usuário</button></a>
            
 
         </form>
