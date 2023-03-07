@@ -4,7 +4,7 @@ const isAdminLogadoLogin = (req,res,next) => {
         
 
 
-        return res.redirect('/homeadmin')
+        return res.redirect('/homeAdmin')
     } else{
         console.log('Não existe session de admin')
         return next()
