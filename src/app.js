@@ -25,8 +25,9 @@ app.use(session({
 
 
 //ROTAS, AQUI DEFINO AS ROTAS DE APONTAMENTO CONFORME AS PÁGINAS DO SITE. TENHO QUE PUXAR AQUI LÁ DA PASTA ROUTES.
-app.use(adminRouter)
 app.use(homeRouter)
+app.use(adminRouter)
+
 
 app.use((req,res,next)=> { //aqui página de não encontrado
     return res.status(404).render('notFound')
