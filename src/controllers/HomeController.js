@@ -86,11 +86,11 @@ const HomeController = {
         return res.render("homeadmin", {adminLogado: req.session.usuarios})
     },
     showCadastroCliente: (req,res)=>{
-        console.log(req.body)
+        
         
         let size = Object.keys(req.body).length
 
-        console.log("quantidade: " + size)
+        
 
 
         return res.send('deu certo')

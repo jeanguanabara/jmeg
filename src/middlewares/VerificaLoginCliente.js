@@ -22,7 +22,7 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
             
                 
                 req.session.cliente = LoginCliente.findCliente(email) // SALVA CLIENTE NA SESSION
-                console.log(req.session.cliente)
+                
                 
                 
                 return next()
@@ -37,7 +37,7 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
     } else if (contador == 12){
         const dadosCadastroCliente = req.body
 
-        console.log ("passou pelo middleware pra validar")
+        
         next()
     }
 
