@@ -84,6 +84,10 @@ const HomeController = {
     },
     showHomeAdmin:(req, res)=> {
         return res.render("homeadmin", {adminLogado: req.session.usuarios})
+    },
+    showCadastroCliente: (req,res)=>{
+        console.log(req.body)
+        return res.send('deu certo')
     }
 
     
