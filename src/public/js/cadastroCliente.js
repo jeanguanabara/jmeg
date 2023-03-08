@@ -13,6 +13,7 @@ window.addEventListener('load', ()=>{
     const complemento       = document.getElementById('complemento');
     const senha1            = document.getElementById('senha1');
     const senha2            = document.getElementById('senha2');
+    const errorValidation   = document.getElementById('errorValidation');
     
     const campos = [name,cpf, email, cep, uf, cidade, bairro, logradouro,numero, complemento]
     
@@ -41,23 +42,21 @@ window.addEventListener('load', ()=>{
          
      })
 
-     
-
-     
-
-
-
-
-
-
 
      //VALIDAÇÃO DO FORMULÁRIO
     formCadCliente.addEventListener('submit', (event)=> {
-        event.preventDefault();
+
+        if ((validaSenha(senha1,senha2) === false)||(validaCampos(campos) === false)){
+            event.preventDefault();
+            errorValidation.innerHTML = 'FAVOR REVISAR OS DADOS'
+        }
+
+        
+
+        
 
 
-        console.log('valida senha: '+ validaSenha(senha1,senha2))
-        console.log('valida campos: '+ validaCampos(campos))
+        
         
     })
 

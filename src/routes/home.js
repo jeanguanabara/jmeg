@@ -22,6 +22,7 @@ const isAdminLogadoLogin = require('../middlewares/isAdminLogado');
 router.get('/', HomeController.showHomePage)//aqui eu digo que a rota quando vem de um get na página inicial, ele vai puxar uma função do controller onde terão todas essas configurações acopladas. Ficando muito mais fácil daí e mais simples aqui.
 router.get('/consultaprod/:parametro', HomeController.showConsultaProd)
 router.get('/cadastro', HomeController.showCadastro)
+router.post('/cadastro', HomeController.showCadastro)
 router.post('/homecliente',VerificaLoginClienteMiddlaware,  AuthController.loginCliente)
 router.get('/itemvenda/:id', HomeController.showItemVenda)
 
@@ -29,7 +30,7 @@ router.get('/itemvenda/:id', HomeController.showItemVenda)
 router.post('/homecliente',VerificaLoginClienteMiddlaware, isClienteLogado, AuthController.loginCliente)
 router.post('/meucarrinho',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showMeuCarrinho)
 router.post('/login',isClienteLogadoLogin, HomeController.showLogin)
-router.post('/cadastro', VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showCadastro)
+
 router.post('/homecliente',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showHomeCliente)
 router.post('/editameucadastro',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showEditaMeuCadastro)
 router.post('/meuspedidos',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showMeusPedidos)
