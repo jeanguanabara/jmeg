@@ -1,4 +1,4 @@
-const db = require('../database/db.json');
+const db = require('./db.json');
 
 
 
