@@ -18,7 +18,7 @@ const AdminController = {
         return res.render("editaCadItemAdmin")
     },
     showLoginAdmin:(req, res)=>{
-        return res.render("loginAdmin", {urlDestino: "undefined"})
+        return res.render("loginadmin", {urlDestino: "undefined"})
 
         
     }
