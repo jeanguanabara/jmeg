@@ -4,7 +4,7 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
 
     if (contador == 2){
         const dadosLogin = req.body
-        const LoginCliente = require('../models/LoginCliente')
+        const LoginCliente = require('../database/LoginCliente')
         
 
         const email = dadosLogin.vLoginEmailCliente

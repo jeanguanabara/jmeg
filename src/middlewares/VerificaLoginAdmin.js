@@ -1,7 +1,7 @@
 const VerificaLoginAdminMiddlaware = (req,res,next) => {
     
   const dadosLogin = req.query
-  const Admin = require('../models/Admin')
+  const Admin = require('../database/Admin')
   const email = dadosLogin.vLoginEmailAdmin
   const senha = dadosLogin.vLoginSenhaAdmin
 
