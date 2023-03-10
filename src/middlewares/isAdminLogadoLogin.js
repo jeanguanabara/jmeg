@@ -1,10 +1,10 @@
-const isAdminLogadoLogin = (req,res,next) => {
+const isAdminLogado = (req,res,next) => {
     
     if (req.session.usuarios){
         
 
 
-        return res.redirect('/homeAdmin')
+        return res.redirect('/homeadmin')
     } else{
         console.log('Não existe session de admin')
         return next()
@@ -15,4 +15,4 @@ const isAdminLogadoLogin = (req,res,next) => {
 }
 
 
-module.exports = isAdminLogadoLogin
+module.exports = isAdminLogado
