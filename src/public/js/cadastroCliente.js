@@ -15,7 +15,7 @@ window.addEventListener('load', ()=>{
     const senha2            = document.getElementById('senha2');
     const errorValidation   = document.getElementById('errorValidation');
     
-    const campos = [name,cpf, email, cep, uf, cidade, bairro, logradouro,numero, complemento]
+    const campos = [name,cpf, email, cep, uf, cidade, bairro, logradouro, numero, complemento]
     
 
     //CONSULTA DE API COM CEP
