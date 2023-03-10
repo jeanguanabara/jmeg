@@ -1,5 +1,5 @@
 const db = require('../database/db.json');
-const PassModel = require('../models/PassModel')
+const PassModel = require('../database/PassModel')
 
 
 const LoginCliente =  {
@@ -31,6 +31,7 @@ const LoginCliente =  {
 
    
 }
+
 
 
 

@@ -36,7 +36,7 @@ router.post('/homecliente',VerificaLoginClienteMiddlaware,isClienteLogado, HomeC
 router.post('/editameucadastro',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showEditaMeuCadastro)
 router.post('/meuspedidos',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showMeusPedidos)
 
-router.post('/loginadmin', VerificaLoginAdminMiddlaware, isAdminLogadoLogin, AuthController.loginAdmin)
+//router.post('/loginadmin', VerificaLoginAdminMiddlaware, isAdminLogadoLogin, AuthController.loginAdmin)
 
 router.get('/homecliente',isClienteLogado, HomeController. showHomeCliente)
 router.get('/meucarrinho',isClienteLogado,  HomeController.showMeuCarrinho)
