@@ -4,10 +4,12 @@ const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
 const VerificaCadastroCliente =  async (req,res,next) => {
+
     
     let contador = Object.keys(req.body).length
 
     if (contador == 12){
+
     
     
     const dadosCliente = req.body
@@ -26,7 +28,8 @@ const VerificaCadastroCliente =  async (req,res,next) => {
         uf: uf
     }
 
-     await Endereco.create(newEndereco)
+    //  await Endereco.create(newEndereco)
+
 
      
 

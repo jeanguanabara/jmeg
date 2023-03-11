@@ -7,13 +7,27 @@ module.exports = (sequelize,DataType) => {
         primaryKey: true,
         autoIncrement: true
     },
-    cep: DataType.STRING,
-    logradouro: DataType.STRING,
-    numero: DataType.STRING,
-    complemento: DataType.STRING,
-    bairro: DataType.STRING,
-    cidade: DataType.STRING,
-    uf: DataType.STRING
+    cep: {
+        type: DataType.STRING
+    },
+    logradouro: {
+        type: DataType.STRING
+    },
+    numero: {
+        type: DataType.STRING
+    },
+    complemento: {
+        type: DataType.STRING
+    },
+    bairro: {
+        type: DataType.STRING
+    },
+    cidade: {
+        type: DataType.STRING
+    },
+    uf: {
+        type: DataType.STRING
+    }
     },
     {
         tableName: 'endereco',
@@ -21,4 +35,6 @@ module.exports = (sequelize,DataType) => {
     }
 
     )
+
+    return Endereco
 }
