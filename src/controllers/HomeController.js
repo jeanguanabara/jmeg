@@ -4,7 +4,7 @@ const ProdutosModel = require('../database/ProdutoModel');
 const HomeController = {
     showHomePage: (req,res)=> {
         
-        console.log()
+        
         return res.render("index", {itensMenorValor: ProdutosModel.findHomeMenorValor(), itensMaisRecentes: ProdutosModel.findHomeMaisRecentes()})
        
     },

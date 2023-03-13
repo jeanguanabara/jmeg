@@ -14,17 +14,22 @@
                 
             </div>
             <div class="flex-fill">
+              
+              <%for (let i in produto){%>
+              
                 <div class="card d-flex my-2 flex-wrap flex-row" style="width: 100%;">
-                    <img src="/img/avif/dell-teste.avif" class="card-img-top" alt="IMAGEM PRODUTO" style="width: 5rem; height: 5rem;">
+                    <img src="<%=produto[i].img%>" class="card-img-top" alt="IMAGEM PRODUTO" style="width: 5rem; height: 5rem;">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="/editacaditem" class="btn btn-primary">EDITAR</a>
+                      <h5 class="card-title"><%=produto[i].nome%></h5>
+                      
+                      <a href="/editacaditem/<%=produto[i].id%>" class="btn btn-primary">EDITAR</a>
                       <a href="#" class="btn btn-danger">EXLCUIR</a>
                     </div>
                   </div>
 
                   
+              <%}%>    
+              
 
 
                 

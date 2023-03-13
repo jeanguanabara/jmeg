@@ -27,6 +27,7 @@ router.get(
 router.get("/produtosadmin", AdminController.showProdutosAdmin);
 router.get("/cadastroproduto", AdminController.showCadastroProduto);
 router.get("/editacaditem", AdminController.showEditaCadItem);
+router.get("/editacaditem/:id", AdminController.showEditaCadItemID);
 
 //POR FIM EXPORTO ESSA VARIÁVEL/FUNÇÃO ROUTER PARA IMPORTAR LÁ NO APP.JS
 module.exports = router;

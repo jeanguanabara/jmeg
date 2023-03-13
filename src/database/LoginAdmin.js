@@ -21,6 +21,7 @@ const loginAdmin =  {
     },
     findSenha : (nome,senha)=>{
 
+        
         console.log("entrou no findSenha")
 
         for (let i in user){
