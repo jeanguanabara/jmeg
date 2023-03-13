@@ -1,7 +1,8 @@
-const {Cliente} = require('../models/Cliente')
-const {Endereco} = require('../models/Endereco')
+const Cliente = require('../models/Cliente')
+const Endereco = require('../models/Endereco')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
+const pass = require("../database/PassModel")
 
 const VerificaCadastroCliente =  async (req,res,next) => {
 
@@ -18,7 +19,9 @@ const VerificaCadastroCliente =  async (req,res,next) => {
     const {name, cpf, email, cep, uf, cidade, bairro, logradouro, numero, complemento, senha1, senha2} = req.body
 
     
-    const newEndereco = {
+   
+
+    await Endereco.create({
         cep: cep,
         logradouro: logradouro,
         numero: numero,
@@ -26,12 +29,28 @@ const VerificaCadastroCliente =  async (req,res,next) => {
         bairro: bairro,
         cidade: cidade,
         uf: uf
-    }
+    })
+    .then(async (enderecoSalvo) => {
+        await Cliente.create({
+            nome: name, 
+            cpf: cpf,
+            email: email,
+            senha: pass.passCrypt(senha1),
+            id_end: enderecoSalvo.dataValues.id
+        })
 
-    //  await Endereco.create(newEndereco)
+        
+    })
+    .catch((err)=> {
+        console.log("Error: " + err)
+    })
+
+
+   
 
 
      
+
 
      
      

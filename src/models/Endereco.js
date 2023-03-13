@@ -35,7 +35,9 @@ const sequelize = require('../config/jmeg')
     },
     {
         tableName: 'endereco',
-        timestamp:false
+        timestamp:false,
+        createdAt: false,
+        updatedAt: false
     }
 
     )

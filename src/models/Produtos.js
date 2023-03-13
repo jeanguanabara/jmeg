@@ -18,6 +18,8 @@ const sequelize = require('../config/jmeg')
     },
     {
         tablename: 'produtos',
-        timestamps: false
+        timestamps: false,
+        createdAt: false,
+        updatedAt: false
     })
 module.exports = Produtos

@@ -11,7 +11,9 @@ const sequelize = require('../config/jmeg')
     },
     {
         tableName: 'ram',
-        timestamps: false
+        timestamps: false,
+        createdAt: false,
+        updatedAt: false
     }
     )
 module.exports = Ram

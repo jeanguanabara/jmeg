@@ -12,7 +12,9 @@ const sequelize = require('../config/jmeg')
     },
     {
         tableName: 'pedido',
-        timestamps: false
+        timestamps: false,
+        createdAt: false,
+        updatedAt: false
     }
     )
     

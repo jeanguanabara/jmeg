@@ -11,7 +11,9 @@ const sequelize = require('../config/jmeg')
     },
     {
         tableName: 'marca',
-        timestamps: false
+        timestamps: false,
+        createdAt: false,
+        updatedAt: false
     }
     )
 
