@@ -1,12 +1,14 @@
-module.exports = (sequelize,DataType) => {
+const Sequelize = require('sequelize')
+
+const sequelize = require('../config/jmeg')
     const Pedido = sequelize.define('Pedido',{
         id: {
-            type: DataType.INTERGER,
+            type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        id_cliente: DataType.INTERGER,
-        total: DataType.DOUBLE
+        id_cliente: Sequelize.INTEGER,
+        total: Sequelize.DOUBLE
     },
     {
         tableName: 'pedido',
@@ -14,5 +16,4 @@ module.exports = (sequelize,DataType) => {
     }
     )
     
-    
-}
+    module.exports = Pedido

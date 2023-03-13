@@ -1,32 +1,36 @@
-module.exports = (sequelize,DataType) => {
+const Sequelize = require('sequelize')
+
+const sequelize = require('../config/jmeg')
+
+
     const Endereco = sequelize.define('Endereco',{
 
     
     id:{
-        type: sequelize.INTERGER,
+        type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     cep: {
-        type: DataType.STRING
+        type: Sequelize.STRING
     },
     logradouro: {
-        type: DataType.STRING
+        type: Sequelize.STRING
     },
     numero: {
-        type: DataType.STRING
+        type: Sequelize.STRING
     },
     complemento: {
-        type: DataType.STRING
+        type: Sequelize.STRING
     },
     bairro: {
-        type: DataType.STRING
+        type: Sequelize.STRING
     },
     cidade: {
-        type: DataType.STRING
+        type: Sequelize.STRING
     },
     uf: {
-        type: DataType.STRING
+        type: Sequelize.STRING
     }
     },
     {
@@ -36,5 +40,4 @@ module.exports = (sequelize,DataType) => {
 
     )
 
-    return Endereco
-}
+module.exports = Endereco

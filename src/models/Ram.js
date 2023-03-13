@@ -1,15 +1,17 @@
-module.exports = (sequelize,DataType) => {
+const Sequelize = require('sequelize')
+
+const sequelize = require('../config/jmeg')
     const Ram = sequelize.define('Ram', {
         id: {
-            type: DataType.INTERGER,
+            type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        ram: DataType.STRING
+        ram: Sequelize.STRING
     },
     {
         tableName: 'ram',
         timestamps: false
     }
     )
-}
+module.exports = Ram

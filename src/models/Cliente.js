@@ -1,18 +1,21 @@
-module.exports = (sequelize, DataType) => {
+const Sequelize = require('sequelize')
+
+const sequelize = require('../config/jmeg')
     const Cliente = sequelize.define('Cliente', {
         id: {
-            type:           DataType.INTEGER,
+            type:           Sequelize.INTEGER,
             primaryKey:     true,
             autoIncrement:  true
         },
-        nome: DataType.STRING,
-        cpf: DataType.STRING,
-        email: DataType.STRING,
-        senha: DataType.STRING,
-        id_end: DataType.INTEGER 
+        nome: Sequelize.STRING,
+        cpf: Sequelize.STRING,
+        email: Sequelize.STRING,
+        senha: Sequelize.STRING,
+        id_end: Sequelize.INTEGER 
     },
     {
         tableName: 'cliente',
         timestamps: false
     })
-}
+
+    module.exports = Cliente

@@ -1,15 +1,19 @@
-module.exports = (sequelize,DataType) => {
+const Sequelize = require('sequelize')
+
+const sequelize = require('../config/jmeg')
     const Marca = sequelize.define('Marca', {
         id: {
-            type: DataType.INTERGER,
+            type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        marca: DataType.STRING
+        marca: Sequelize.STRING
     },
     {
         tableName: 'marca',
         timestamps: false
     }
     )
-}
+
+
+    module.exports = Marca

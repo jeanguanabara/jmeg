@@ -1,15 +1,17 @@
-module.exports = (sequelize,DataType) => {
+const Sequelize = require('sequelize')
+
+const sequelize = require('../config/jmeg')
     const Processador = sequelize.define('Processador', {
         id: {
-            type: DataType.INTERGER,
+            type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        processador: DataType.STRING
+        processador: Sequelize.STRING
     },
     {
         tableName: 'processador',
         timestamps: false
     }
     )
-}
+module.exports = Processador
