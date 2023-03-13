@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include('./components/headAdmin.ejs') %>
+  <script src="/js/editaCadItemAdminID.js"></script>
 
     <body>
 
@@ -32,7 +33,7 @@
                       text-center">
 
                       <p class="me-1">R$</p>
-
+                      
                       <input type="number" class="form-control "
                         id="valorProduto" placeholder="999,99" step="0.01"
                         min="0.01" required="" value="<%=item.valor%>">
@@ -49,10 +50,10 @@
 
                   <div class="col-md-4">
                     <label for="state" class="form-label">MARCA</label>
-                    <select class="form-select" id="marcaProduto" required="">
+                    <select class="form-select" id="marcaProduto" required="" value="<%=item.id_marca%>">
                       
                       <%for (let i in complementos.marca){%>
-                      <option value=""></option>
+                      <option <%= complementos.marca[i].id == item.id_marca ? selected = "selected" : "" %> value="<%=complementos.marca[i].id%>"><%=complementos.marca[i].marca%></option>
                       <%}%>
                     </select>
 
@@ -60,25 +61,28 @@
                   <div class="col-md-4">
                     <label for="state" class="form-label">PROCESSADOR</label>
                     <select class="form-select" id="processadorProduto"
-                      required="">
-                      <option value=""></option>
-                      <option>AQUI VIRÃO OS PROCESSADORES</option>
+                      required="" >
+                      <%for (let i in complementos.processador){%>
+                        <option <%= complementos.processador[i].id == item.id_processador ? selected = "selected" : "" %> value="<%=complementos.processador[i].id%>"><%=complementos.processador[i].processador%></option>
+                        <%}%>
                     </select>
 
                   </div>
                   <div class="col-md-4">
                     <label for="state" class="form-label">MEMÓRIA RAM</label>
                     <select class="form-select" id="ramProduto" required="">
-                      <option value=""></option>
-                      <option>AQUI VIRÃO AS MEMÓRIAS RAM</option>
+                      <%for (let i in complementos.ram){%>
+                        <option <%= complementos.ram[i].id == item.id_ram ? selected = "selected" : "" %> value="<%=complementos.ram[i].id%>"><%=complementos.ram[i].ram%></option>
+                        <%}%>
                     </select>
 
                   </div>
                   <div class="col-md-4">
                     <label for="state" class="form-label">TAMANHO MONITOR</label>
                     <select class="form-select" id="monitorProduto" required="">
-                      <option value=""></option>
-                      <option>AQUI VIRÃO OS TAMANHOS DE MONITORES</option>
+                      <%for (let i in complementos.tela){%>
+                        <option <%= complementos.tela[i].id == item.id_tela ? selected = "selected" : "" %> value="<%=complementos.tela[i].id%>"><%=complementos.tela[i].tela%></option>
+                        <%}%>
                     </select>
 
                   </div>
@@ -89,14 +93,11 @@
 
                 <div class="mx-1 ">
                   <label for="formFile" class="form-label">Imagem do Produto</label>
-                  <input class="form-control" type="file" id="upImgProdutoCadAdmin"
-                    name="imagemProduto" accept="image/*">
+                  <input class="form-control" type="text" id="upImgProdutoCadAdmin"
+                    name="imagemProduto" placeholder="Cole aqui o endereço da imagem.">
                 </div>
 
-                <div class="imagem-item-venda m-1">
-                  <img id="imgProdutoCadAdmin" src="/img/png/fundo-branco.png" class="img-thumbnail"
-                    alt="Imagem Produto">
-                </div>
+                
 
               </div>
 

@@ -61,6 +61,7 @@ const ProdutoModel = {
         let processador = db.processador
         let ram = db.ram
         let tela = db.tela
+        console.log({marca,processador,ram,tela})
         return {marca, processador, ram, tela}
     },
     findByBome: (nome) => {
