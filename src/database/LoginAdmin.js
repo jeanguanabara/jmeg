@@ -1,14 +1,17 @@
-const db = require('../database/db.json');
-const PassModel = require('../models/PassModel')
+const db = require('./db.json');
+const PassModel = require('./PassModel')
+
+const user = db.usuarios
 
 
 const loginAdmin =  {
     
-    findEmail : (email)=>{
-        console.log(email + "email informado")
-        for (let i in db.usuarios){
+    findEmail : (nome)=>{
+        console.log("entrou no findnome")
+        for (let i in user){
             
-           if(db.usuarios[i].email === email){
+            
+           if(user[i].nome == nome){
            
             return true
            } 
@@ -16,18 +19,25 @@ const loginAdmin =  {
         return false
         
     },
-    findSenha : (email,senha)=>{
-        for (let i in db.usuarios){
+    findSenha : (nome,senha)=>{
+
+        console.log("entrou no findSenha")
+
+        for (let i in user){
+
+
+            console.log("vai percorrer o for do findSenha")
             
-            if(db.usuarios[i].email === email & PassModel.passValidation(senha,db.usuarios[i].senha)){
-                console.log('email e senha bateu')
+            if(user[i].nome === nome & PassModel.passValidation(senha,user[i].senha)){
+                console.log('nome e senha bateu')
                 
              return true
             } 
          }
+         console.log("senha não bateu")
          return false
     },
-    findAdm: (email) => db.usuarios.find(elemento => elemento.email === email)
+    findAdmin: (nome) => user.find(elemento => elemento.nome === nome)
 
    
 }

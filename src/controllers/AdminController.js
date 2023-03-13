@@ -5,7 +5,7 @@ const AdminController = {
     },
 
     showHomeAdmin: (req,res)=>{
-        return res.render('homeAdmin')
+        return res.render('homeAdmin', {admin: req.session.user})
     },
 
     showProdutosAdmin: (req,res)=> {
@@ -24,6 +24,7 @@ const AdminController = {
     }
 
 
+    
     
 }
 

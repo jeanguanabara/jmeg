@@ -11,10 +11,10 @@ const router = express.Router();//Aqui puxo especificadamente a função Router(
 
 //MIDDLEWARES
 const VerificaLoginClienteMiddlaware = require('../middlewares/VerificaLoginCliente')
-const VerificaLoginAdminMiddlaware = require('../middlewares/VerificaLoginAdmin')
+
 const isClienteLogado = require('../middlewares/isClienteLogado')
 const isClienteLogadoLogin = require('../middlewares/isClienteLogadoLogin');
-const isAdminLogadoLogin = require('../middlewares/isAdminLogado');
+
 const VerificaCadastroClienteMiddleware = require('../middlewares/VerificaCadastroCliente')
 
 
