@@ -35,6 +35,12 @@ const AdminController = {
         return res.render("loginadmin", {urlDestino: "undefined"})
 
         
+    },
+    cadastrarProduto: (req,res)=> {
+        return res.sender("cadastrou")
+    },
+    ataulizarProduto: (req,res)=> {
+        return res.sender("cadastrou")
     }
 
 
