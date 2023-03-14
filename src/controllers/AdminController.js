@@ -54,7 +54,7 @@ const AdminController = {
             id_tela: req.body.telaProduto
         })
 
-        console.log(req.body)
+        
 
         return res.redirect('/produtosadmin')
     },
