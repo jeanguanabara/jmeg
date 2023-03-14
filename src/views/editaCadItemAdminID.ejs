@@ -17,12 +17,12 @@
               <a href="/produtosadmin" class="btn btn-danger me-2 mt-2">CANCELAR</a>
             </div>
             <div class="col-md-7 col-lg-8 flex-fill p-2 text-white">
-              <form class="needs-validation" enctype="multipart/form-data"
-                method="post" action="salvarItem">
+              <form class="needs-validation"
+                method="post" action="/atualizarItem/<%=item.id%>">
                 <div class="row g-3">
                   <div class="col-sm-13">
                     <label for="nomeProduto" class="form-label">Nome Produto</label>
-                    <input type="text" class="form-control" id="nomeProduto"
+                    <input type="text" class="form-control" id="nomeProduto" name="nomeProduto"
                       placeholder="Nome Produto" value="<%=item.nome%>" required="">
 
                   </div>
@@ -35,7 +35,7 @@
                       <p class="me-1">R$</p>
                       
                       <input type="number" class="form-control "
-                        id="valorProduto" placeholder="999,99" step="0.01"
+                        id="valorProduto" name="valorProduto" placeholder="999,99" step="0.01"
                         min="0.01" required="" value="<%=item.valor%>">
 
                     </div>
@@ -45,7 +45,7 @@
                     <label for="textoProduto" class="form-label">Descrição do
                       Item</label>
 
-                    <textarea class="form-control" id="textoProduto" rows="10"><%=item.descricao%></textarea>
+                    <textarea class="form-control" id="textoProduto" name="textoProduto" rows="10"><%=item.descricao%></textarea>
                   </div>
 
                   <div class="col-md-4">
@@ -94,7 +94,7 @@
                 <div class="mx-1 ">
                   <label for="formFile" class="form-label">Imagem do Produto</label>
                   <input class="form-control" type="text" id="upImgProdutoCadAdmin"
-                    name="imagemProduto" placeholder="Cole aqui o endereço da imagem.">
+                    name="imagemProduto" placeholder="Cole aqui o endereço da imagem." value="<%=item.img%>">
                 </div>
 
                 

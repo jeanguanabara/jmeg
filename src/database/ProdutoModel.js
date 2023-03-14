@@ -1,4 +1,5 @@
 const db = require('../database/db.json');
+const Produtos = require('../models/Produtos')
 const Marca = require('../models/Marca')
 const Processador = require('../models/Processador')
 const Ram = require('../models/Ram')
@@ -10,7 +11,14 @@ const ProdutoModel = {
         let processador = new Array
         let ram = new Array
         let tela = new Array
-        let produtos = db.produtos
+        let produtos = new Array
+
+        await Produtos.findAll()
+        .then((rtr)=>{
+            for (i in rtr){
+                produtos.push(rtr[i].dataValues)
+            }
+        })
 
         await Marca.findAll()
         .then((rtn)=>{
@@ -46,12 +54,29 @@ const ProdutoModel = {
         })
         return {marca, processador, ram, tela, produtos}
     },
-    findAllProdutos: ()=> {
-        return db.produtos
+    findAllProdutos: async ()=> {
+        let produtos = new Array
+
+        await Produtos.findAll()
+        .then((rtr)=>{
+            for (i in rtr){
+                produtos.push(rtr[i].dataValues)
+            }
+        })
+
+
+        return produtos
     }
     ,
-    findHomeMenorValor : () => {
-        let produtos = db.produtos
+    findHomeMenorValor : async () => {
+        let produtos = new Array
+
+        await Produtos.findAll()
+        .then((rtr)=>{
+            for (i in rtr){
+                produtos.push(rtr[i].dataValues)
+            }
+        })
         
 
         function valorMenor(a,b){
@@ -69,8 +94,15 @@ const ProdutoModel = {
 
           
     },
-    findHomeMaisRecentes: () => {
-        let produtos = db.produtos
+    findHomeMaisRecentes: async () => {
+        let produtos = new Array
+
+        await Produtos.findAll()
+        .then((rtr)=>{
+            for (i in rtr){
+                produtos.push(rtr[i].dataValues)
+            }
+        })
 
         
         function valorMenor(a,b){
@@ -83,10 +115,16 @@ const ProdutoModel = {
         
         return itensMenorValor.slice(0,3)
     },
-    findbyID: (id)=> {
+    findbyID: async (id)=>  {
+        
+        let produtoImport = await Produtos.findByPk(id)
+        
 
+        let produto = produtoImport.dataValues
 
-        let produto = db.produtos.find(elemento => elemento.id == id)
+        
+
+        console.log(produto)
         
        
         return produto
@@ -147,8 +185,10 @@ const ProdutoModel = {
 
         return {marca, processador, ram, tela}
     },
-    findByBome: (nome) => {
-        let produtos = db.produtos
+    findByBome: async (nome) => {
+        let produtos = new Array
+
+        await Produtos.findAll()
 
         let resultadoPesquisa = []
 
@@ -203,6 +243,7 @@ const ProdutoModel = {
             return undefined
         }
     }
+    
 }
 
 module.exports = ProdutoModel

@@ -2,13 +2,13 @@
 const ProdutosModel = require('../database/ProdutoModel');
 
 const HomeController = {
-    showHomePage: (req,res)=> {
+    showHomePage: async (req,res)=> {
         
         
-        return res.render("index", {itensMenorValor: ProdutosModel.findHomeMenorValor(), itensMaisRecentes: ProdutosModel.findHomeMaisRecentes()})
+        return res.render("index", {itensMenorValor: await ProdutosModel.findHomeMenorValor(), itensMaisRecentes: await ProdutosModel.findHomeMaisRecentes()})
        
     },
-    showConsultaProd:(req,res)=> {
+    showConsultaProd:async (req,res)=> {
 
         
         
@@ -16,31 +16,31 @@ const HomeController = {
         
         switch (req.params.parametro) {
             case "nome":
-                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByBome(req.query.txtBuscaProdutoNome)})
+                return res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findByBome(req.query.txtBuscaProdutoNome)})
                 
             case "todos":
-                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findAllProdutos()})
+                return res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findAllProdutos()})
             
             case "lenovo": 
-                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+                return res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findByMarca(req.params.parametro)})
                             
             case "samsung":
-                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+                return res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findByMarca(req.params.parametro)})
 
             case "dell": 
-                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+                return res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findByMarca(req.params.parametro)})
 
             case "acer":
-                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByMarca(req.params.parametro)})
+                return res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findByMarca(req.params.parametro)})
 
             case "CORE I3":
-                return res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+                return res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findByProcessador(req.params.parametro)})
 
             case "CORE I5":
-                return  res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+                return  res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findByProcessador(req.params.parametro)})
 
             case "CORE I7":
-                return  res.render("consultaProdutos", {itensPesquisados: ProdutosModel.findByProcessador(req.params.parametro)})
+                return  res.render("consultaProdutos", {itensPesquisados: await ProdutosModel.findByProcessador(req.params.parametro)})
 
             default: 
                 return  res.render("consultaProdutos", {itensPesquisados: undefined})
@@ -64,14 +64,13 @@ const HomeController = {
     showCadastro:(req, res)=>{
         return res.render("cadastro")
     },
-    showItemVenda:(req, res)=>{
+    showItemVenda: async (req, res)=>{
 
         let {id} = req.params
         
-        console.log(ProdutosModel.findbyID(id))
-        console.log(ProdutosModel.findComplementos())
+        
 
-        return res.render("itemVenda", {item: ProdutosModel.findbyID(id),complementos: ProdutosModel.findComplementos()} )
+        return res.render("itemVenda", {item: await ProdutosModel.findbyID(id),complementos: await ProdutosModel.findComplementos()} )
     },
     showHomeCliente:(req, res)=>{
         return res.render("homecliente", {clienteLogado: req.session.cliente})
