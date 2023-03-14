@@ -50,7 +50,7 @@
 
                   <div class="col-md-4">
                     <label for="state" class="form-label">MARCA</label>
-                    <select class="form-select" id="marcaProduto" required="" value="<%=item.id_marca%>">
+                    <select class="form-select" id="marcaProduto" required="" name="marcaProduto" value="<%=item.id_marca%>">
                       
                       <%for (let i in complementos.marca){%>
                       <option <%= complementos.marca[i].id == item.id_marca ? selected = "selected" : "" %> value="<%=complementos.marca[i].id%>"><%=complementos.marca[i].marca%></option>
@@ -61,7 +61,7 @@
                   <div class="col-md-4">
                     <label for="state" class="form-label">PROCESSADOR</label>
                     <select class="form-select" id="processadorProduto"
-                      required="" >
+                      required="" name="processadorProduto">
                       <%for (let i in complementos.processador){%>
                         <option <%= complementos.processador[i].id == item.id_processador ? selected = "selected" : "" %> value="<%=complementos.processador[i].id%>"><%=complementos.processador[i].processador%></option>
                         <%}%>
@@ -70,7 +70,7 @@
                   </div>
                   <div class="col-md-4">
                     <label for="state" class="form-label">MEMÓRIA RAM</label>
-                    <select class="form-select" id="ramProduto" required="">
+                    <select class="form-select" id="ramProduto" required="" name="ramProduto">
                       <%for (let i in complementos.ram){%>
                         <option <%= complementos.ram[i].id == item.id_ram ? selected = "selected" : "" %> value="<%=complementos.ram[i].id%>"><%=complementos.ram[i].ram%></option>
                         <%}%>
@@ -79,9 +79,9 @@
                   </div>
                   <div class="col-md-4">
                     <label for="state" class="form-label">TAMANHO MONITOR</label>
-                    <select class="form-select" id="monitorProduto" required="">
+                    <select class="form-select" id="telaProduto" required="" name="telaProduto">
                       <%for (let i in complementos.tela){%>
-                        <option <%= complementos.tela[i].id == item.id_tela ? selected = "selected" : "" %> value="<%=complementos.tela[i].id%>"><%=complementos.tela[i].tela%></option>
+                        <option <%= complementos.tela[i].id == item.id_tela ? selected = "selected" : "" %> value="<%=complementos.tela[i].id%>"><%=complementos.tela[i].tela%>"</option>
                         <%}%>
                     </select>
 

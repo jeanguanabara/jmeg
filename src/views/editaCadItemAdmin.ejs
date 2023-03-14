@@ -17,12 +17,12 @@
             </div>
             <div class="col-md-7 col-lg-8 flex-fill p-2 text-white">
               <form class="needs-validation" enctype="multipart/form-data"
-                method="post" action="salvarItem">
+                method="post" action="/salvarItem">
                 <div class="row g-3">
                   <div class="col-sm-13">
                     <label for="nomeProduto" class="form-label">Nome Produto</label>
                     <input type="text" class="form-control" id="nomeProduto"
-                      placeholder="Nome Produto" value="" required="">
+                      placeholder="Nome Produto" value="" required="" name="nomeProduto">
 
                   </div>
 
@@ -35,7 +35,7 @@
 
                       <input type="number" class="form-control "
                         id="valorProduto" placeholder="999,99" step="0.01"
-                        min="0.01" required="">
+                        min="0.01" required="" name="valorProduto">
 
                     </div>
                   </div>
@@ -44,39 +44,44 @@
                     <label for="textoProduto" class="form-label">Descrição do
                       Item</label>
 
-                    <textarea class="form-control" id="textoProduto" rows="10"></textarea>
+                    <textarea class="form-control" id="textoProduto" rows="10" name="textoProduto"></textarea>
                   </div>
 
                   <div class="col-md-4">
                     <label for="state" class="form-label">MARCA</label>
-                    <select class="form-select" id="marcaProduto" required="">
-                      <option value=""></option>
-                      <option>AQUI VIRÃO AS MARCAS</option>
+                    <select class="form-select" id="marcaProduto" required="" name="marcaProduto" >
+                      
+                      <%for (let i in complementos.marca){%>
+                      <option value="<%=complementos.marca[i].id%>"><%=complementos.marca[i].marca%></option>
+                      <%}%>
                     </select>
 
                   </div>
                   <div class="col-md-4">
                     <label for="state" class="form-label">PROCESSADOR</label>
                     <select class="form-select" id="processadorProduto"
-                      required="">
-                      <option value=""></option>
-                      <option>AQUI VIRÃO OS PROCESSADORES</option>
+                      required="" name="processadorProduto">
+                      <%for (let i in complementos.processador){%>
+                        <option  value="<%=complementos.processador[i].id%>"><%=complementos.processador[i].processador%></option>
+                        <%}%>
                     </select>
 
                   </div>
                   <div class="col-md-4">
                     <label for="state" class="form-label">MEMÓRIA RAM</label>
-                    <select class="form-select" id="ramProduto" required="">
-                      <option value=""></option>
-                      <option>AQUI VIRÃO AS MEMÓRIAS RAM</option>
+                    <select class="form-select" id="ramProduto" required="" name="ramProduto">
+                      <%for (let i in complementos.ram){%>
+                        <option  value="<%=complementos.ram[i].id%>"><%=complementos.ram[i].ram%></option>
+                        <%}%>
                     </select>
 
                   </div>
                   <div class="col-md-4">
                     <label for="state" class="form-label">TAMANHO MONITOR</label>
-                    <select class="form-select" id="monitorProduto" required="">
-                      <option value=""></option>
-                      <option>AQUI VIRÃO OS TAMANHOS DE MONITORES</option>
+                    <select class="form-select" id="telaProduto" required="" name="telaProduto">
+                      <%for (let i in complementos.tela){%>
+                        <option  value="<%=complementos.tela[i].id%>"><%=complementos.tela[i].tela%>"</option>
+                        <%}%>
                     </select>
 
                   </div>
@@ -87,13 +92,8 @@
 
                 <div class="mx-1 ">
                   <label for="formFile" class="form-label">Imagem do Produto</label>
-                  <input class="form-control" type="file" id="upImgProdutoCadAdmin"
-                    name="imagemProduto" accept="image/*">
-                </div>
-
-                <div class="imagem-item-venda m-1">
-                  <img id="imgProdutoCadAdmin" src="/img/png/fundo-branco.png" class="img-thumbnail"
-                    alt="Imagem Produto">
+                  <input class="form-control" type="text" id="upImgProdutoCadAdmin"
+                    name="imagemProduto" placeholder="Cole aqui o endereço da imagem.">
                 </div>
 
               </div>

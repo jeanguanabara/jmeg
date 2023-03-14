@@ -1,11 +1,17 @@
 const db = require('../database/db.json');
+const Marca = require('../models/Marca')
+const Processador = require('../models/Processador')
+const Ram = require('../models/Ram')
+const Tela = require('../models/Tela')
+const Produtos = require('../models/Produtos')
+
 
 const ProdutoModel = {
-    findAll : ()=> {
-        let marca = db.marca
-        let processador = db.processador
-        let ram = db.ram
-        let tela = db.tela
+    findAll : async ()=> {
+        let marca = await Marca.findAll()
+        let processador = await Processador.findAll()
+        let ram = await Ram.findAll()
+        let tela = await Tela.findAll()
         let produtos = db.produtos
         return {marca, processador, ram, tela, produtos}
     },
@@ -51,18 +57,24 @@ const ProdutoModel = {
 
         let produto = db.produtos.find(elemento => elemento.id == id)
         
-        console.log(produto)
+        
         return produto
 
 
     },
-    findComplementos: () => {
-        let marca = db.marca
-        let processador = db.processador
-        let ram = db.ram
-        let tela = db.tela
-        console.log({marca,processador,ram,tela})
+    findComplementos: async () => {
+        let marca = await Marca.findAll()
+        
+        
+        console.log("passou pelo find complementos")
+        console.log(marca.dataValues)
+        console.log("marca está acima")
+       
         return {marca, processador, ram, tela}
+
+        // let processador = await Processador.findAll()
+        // let ram = await Ram.findAll()
+        // let tela = await Tela.findAll()
     },
     findByBome: (nome) => {
         let produtos = db.produtos

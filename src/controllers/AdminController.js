@@ -21,7 +21,7 @@ const AdminController = {
         return res.render("cadastroProduto" ,{admin: req.session.user})
     },
     showEditaCadItem: (req,res)=> {
-        return res.render("editaCadItemAdmin" ,{admin: req.session.user})
+        return res.render("editaCadItemAdmin" ,{admin: req.session.user, complementos: ProdutosModel.findComplementos()})
     }
     ,
     showEditaCadItemID: (req,res)=> {
@@ -37,6 +37,7 @@ const AdminController = {
         
     },
     cadastrarProduto: (req,res)=> {
+        
         return res.sender("cadastrou")
     },
     ataulizarProduto: (req,res)=> {
