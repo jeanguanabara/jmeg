@@ -1,4 +1,6 @@
 const ProdutosModel = require('../database/ProdutoModel');
+const Produtos = require('../models/Produtos')
+
 
 const AdminController = {
 
@@ -20,8 +22,11 @@ const AdminController = {
 
         return res.render("cadastroProduto" ,{admin: req.session.user})
     },
-    showEditaCadItem: (req,res)=> {
-        return res.render("editaCadItemAdmin" ,{admin: req.session.user, complementos: ProdutosModel.findComplementos()})
+    showEditaCadItem: async (req,res)=> {
+           
+       
+            
+        return res.render("editaCadItemAdmin" ,{admin: req.session.user,  complementos: await ProdutosModel.findComplementos()})
     }
     ,
     showEditaCadItemID: (req,res)=> {
@@ -36,9 +41,22 @@ const AdminController = {
 
         
     },
-    cadastrarProduto: (req,res)=> {
-        
-        return res.sender("cadastrou")
+    cadastrarProduto: async (req,res)=> {
+
+        await Produtos.create({
+            nome: req.body.nomeProduto,
+            descricao: req.body.textoProduto,
+            valor: req.body.valorProduto, 
+            img: req.body.imagemProduto,
+            id_marca: req.body.marcaProduto,
+            id_processador: req.body.processadorProduto,
+            id_ram: req.body.ramProduto,
+            id_tela: req.body.telaProduto
+        })
+
+        console.log(req.body)
+
+        return res.redirect('/produtosadmin')
     },
     ataulizarProduto: (req,res)=> {
         return res.sender("cadastrou")

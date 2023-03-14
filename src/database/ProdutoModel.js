@@ -3,16 +3,47 @@ const Marca = require('../models/Marca')
 const Processador = require('../models/Processador')
 const Ram = require('../models/Ram')
 const Tela = require('../models/Tela')
-const Produtos = require('../models/Produtos')
-
 
 const ProdutoModel = {
     findAll : async ()=> {
-        let marca = await Marca.findAll()
-        let processador = await Processador.findAll()
-        let ram = await Ram.findAll()
-        let tela = await Tela.findAll()
+        let marca = new Array
+        let processador = new Array
+        let ram = new Array
+        let tela = new Array
         let produtos = db.produtos
+
+        await Marca.findAll()
+        .then((rtn)=>{
+
+            
+            for (i in rtn){
+                marca.push(rtn[i].dataValues)
+            }
+        })
+        await Processador.findAll()
+        .then((rtn)=>{
+
+            
+            for (i in rtn){
+                processador.push(rtn[i].dataValues)
+            }
+        })
+        await Ram.findAll()
+        .then((rtn)=>{
+
+            
+            for (i in rtn){
+                ram.push(rtn[i].dataValues)
+            }
+        })
+        await Tela.findAll()
+        .then((rtn)=>{
+
+            
+            for (i in rtn){
+                tela.push(rtn[i].dataValues)
+            }
+        })
         return {marca, processador, ram, tela, produtos}
     },
     findAllProdutos: ()=> {
@@ -57,24 +88,64 @@ const ProdutoModel = {
 
         let produto = db.produtos.find(elemento => elemento.id == id)
         
-        
+       
         return produto
 
 
     },
     findComplementos: async () => {
-        let marca = await Marca.findAll()
-        
-        
-        console.log("passou pelo find complementos")
-        console.log(marca.dataValues)
-        console.log("marca está acima")
-       
-        return {marca, processador, ram, tela}
+        let marca = new Array
+        let processador = new Array
+        let ram = new Array
+        let tela = new Array
+        await Marca.findAll()
+        .then((rtn)=>{
+                
+            
+            for (i in rtn){
+                
+                marca.push(rtn[i].dataValues)
+            }
+        })
+        .catch((err)=>{
+            console.log('Error: ' + err)
+        })
+        await Processador.findAll()
+        .then((rtn)=>{
 
-        // let processador = await Processador.findAll()
-        // let ram = await Ram.findAll()
-        // let tela = await Tela.findAll()
+            
+            for (i in rtn){
+                processador.push(rtn[i].dataValues)
+            }
+        })
+        .catch((err)=>{
+            console.log('Error: ' + err)
+        })
+        await Ram.findAll()
+        .then((rtn)=>{
+
+            
+            for (i in rtn){
+                ram.push(rtn[i].dataValues)
+            }
+        })
+        .catch((err)=>{
+            console.log('Error: ' + err)
+        })
+        await Tela.findAll()
+        .then((rtn)=>{
+
+            
+            for (i in rtn){
+                tela.push(rtn[i].dataValues)
+            }
+        })
+        .catch((err)=>{
+            console.log('Error: ' + err)
+        })
+        
+
+        return {marca, processador, ram, tela}
     },
     findByBome: (nome) => {
         let produtos = db.produtos

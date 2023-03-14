@@ -1,21 +1,21 @@
 const Sequelize = require('sequelize')
 
-const sequelize = require('../config/jmeg')
-    const Marca = sequelize.define('Marca', {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        marca: Sequelize.STRING
+const sequelize = require('../config/jmeg')//config do banco
+const Marca = sequelize.define('Marca', {
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
-    {
-        tableName: 'marca',
-        timestamps: false,
-        createdAt: false,
-        updatedAt: false
-    }
-    )
+    marca: Sequelize.STRING
+},
+{
+    tableName: 'marca',
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false
+}
+)
 
 
     module.exports = Marca
