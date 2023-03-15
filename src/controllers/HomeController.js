@@ -287,6 +287,13 @@ const HomeController = {
         })
 
         res.redirect('/meucarrinho')
+    },
+    finalizaCarrinho: async (req,res) => {
+        let {id} = req.params
+
+        
+
+        res.send('finalizado')
     }
 
     

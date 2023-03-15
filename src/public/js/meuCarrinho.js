@@ -11,41 +11,35 @@ window.addEventListener("load", () => {
     const vlrItemCarrinho = document.querySelectorAll('#vlr-item-carrinho')
     const vlrTotalCarrinho = document.querySelector('#vlr-total-carrinho')
 
+
+    
+
     
     calculaVlrTotal()//assim que carregar a página vai executar a função de calcular o valor total.
-
-
-
     
 
-    console.log("somar item carrinho", somarItemCarrinho);
-    console.log("qnt item carrinho", qntItemCarrinho);
-    console.log("subtrair item carrinho", subtrairItemCarrinho);
-    console.log("vlr item carrinho", vlrItemCarrinho);
-    console.log("vlr total carrinho", vlrTotalCarrinho);
-
-    
-        calculaVlrTotal()
-
-
-    
 //BOTÕES DE ADIÇÃO E SUBTRAÇÃO DE QUANTIDADE DE PRODUTOS NO CARRINHO
     for (let i in somarItemCarrinho) {
         
         somarItemCarrinho[i].addEventListener("click", (event) => {
-            let qntAtualItemCarrinho = parseInt(qntItemCarrinho[i].innerText);
+            
+            let qntAtualItemCarrinho = parseInt(qntItemCarrinho[i].value);
+
+            
             
 
             qntAtualItemCarrinho += 1;
 
+           
+
             
 
-            qntItemCarrinho[i].innerHTML = qntAtualItemCarrinho;
+            qntItemCarrinho[i].value = qntAtualItemCarrinho;
             calculaVlrTotal()
         }); //fim somar item no carrinho
 
         subtrairItemCarrinho[i].addEventListener("click", (event) => {
-            let qntAtualItemCarrinho = parseInt(qntItemCarrinho[i].innerText);
+            let qntAtualItemCarrinho = parseInt(qntItemCarrinho[i].value);
             
 
             if (qntAtualItemCarrinho > 1) {
@@ -53,7 +47,7 @@ window.addEventListener("load", () => {
 
                 
 
-                qntItemCarrinho[i].innerHTML = qntAtualItemCarrinho;
+                qntItemCarrinho[i].value = qntAtualItemCarrinho;
                 calculaVlrTotal()
             }
         }); //fim subtrair item do carrinho, só deixa subtrair até 1
@@ -67,6 +61,9 @@ window.addEventListener("load", () => {
     //FUNCÇÕES DO CARRINHO DE COMPRAS
     function calculaVlrTotal(){
 
+        console.log('*************************************************************')
+        
+
         console.log('Executou funcao')
         let vlrTotal = 0
         console.log("Valor Começo é pra ta zero = ",vlrTotal)
@@ -76,9 +73,9 @@ window.addEventListener("load", () => {
         for (let i = 0; i< qntItemCarrinho.length; i++){
             console.log("Posição do array = ",i)
             console.log('let i = ',i)
-            let qnt = parseFloat(qntItemCarrinho[i].innerText).toFixed(2)
+            let qnt = parseFloat(qntItemCarrinho[i].value).toFixed(2)
             console.log("Quantidade desse item é = ",qnt)
-            let vlr = parseFloat(vlrItemCarrinho[i].innerText).toFixed(2)
+            let vlr = parseFloat(vlrItemCarrinho[i].value).toFixed(2)
             console.log("Valor desse Item é = ",vlr)
             
             vlrTotal += qnt*vlr
@@ -90,7 +87,9 @@ window.addEventListener("load", () => {
 
         console.log("Última função é pra ser o valor final do carrinho",vlrTotal)
 
-        vlrTotalCarrinho.innerHTML = vlrTotal.toFixed(2)
+        vlrTotalCarrinho.value = vlrTotal.toFixed(2)
+
+        console.log('*************************************************************')
         
     }
 
