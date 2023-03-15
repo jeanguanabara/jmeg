@@ -11,10 +11,8 @@ const VerificaCadastroCliente =  async (req,res,next) => {
 
     if (contador == 12){
 
+
     
-    
-    const dadosCliente = req.body
-    console.log(dadosCliente)
     
     const {name, cpf, email, cep, uf, cidade, bairro, logradouro, numero, complemento, senha1, senha2} = req.body
 
@@ -37,6 +35,9 @@ const VerificaCadastroCliente =  async (req,res,next) => {
             email: email,
             senha: pass.passCrypt(senha1),
             id_end: enderecoSalvo.dataValues.id
+        })
+        .then((clienteSalvo)=> {
+            req.session.cliente = clienteSalvo.dataValues
         })
 
         

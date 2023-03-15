@@ -8,7 +8,8 @@ const sequelize = require('../config/jmeg')
             autoIncrement: true
         },
         id_cliente: Sequelize.INTEGER,
-        total: Sequelize.DOUBLE
+        total: Sequelize.DOUBLE,
+        finalizado: Sequelize.STRING
     },
     {
         tableName: 'pedido',

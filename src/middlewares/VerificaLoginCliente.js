@@ -1,4 +1,4 @@
-const VerificaLoginClienteMiddlaware = (req,res,next) => {
+const VerificaLoginClienteMiddlaware = async (req,res,next) => {
     
     let contador = Object.keys(req.body).length
 
@@ -11,10 +11,13 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
         const senha = dadosLogin.vLoginSenhaCliente
 
 
+        
+
+
 
 
         if (LoginCliente.findEmail(email)){ //aqui verifica se tem o email do LoginCliente na base
-            
+            console.log('retornou true')
             if (LoginCliente.findSenha(email,senha)){ //se achar o email, vai verificar se a senha informada bate com o email que entrou
                 
                 
@@ -35,7 +38,7 @@ const VerificaLoginClienteMiddlaware = (req,res,next) => {
             return res.render('login', {urlDestino: undefined, error: "Dados Incorretos"})
         }
     } else if (contador == 12){
-        const dadosCadastroCliente = req.body
+        
 
         
         next()

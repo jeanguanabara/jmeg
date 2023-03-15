@@ -87,12 +87,12 @@ const HomeController = {
     showCadastroCliente: (req,res)=>{
         
         
-        let size = Object.keys(req.body).length
+        
 
         
 
 
-        return res.send('deu certo')
+        return res.redirect('/homecliente')
     }
 
     

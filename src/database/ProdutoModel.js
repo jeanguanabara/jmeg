@@ -1,4 +1,4 @@
-const db = require('../database/db.json');
+
 const Produtos = require('../models/Produtos')
 const Marca = require('../models/Marca')
 const Processador = require('../models/Processador')
@@ -189,12 +189,17 @@ const ProdutoModel = {
         let produtos = new Array
 
         await Produtos.findAll()
+        .then((rtn)=> {
+            for (i in rtn){
+                produtos.push(rtn[i].dataValues)
+            }
+        })
 
-        let resultadoPesquisa = []
+        let resultadoPesquisa = new Array
 
         for (let i in produtos){
             let consultaItem = produtos[i].nome.toLowerCase()
-            if (consultaItem.includes(nome)){
+            if (consultaItem.includes(nome.toLowerCase())){
                 resultadoPesquisa.push(produtos[i])
             }
         }
@@ -206,18 +211,36 @@ const ProdutoModel = {
         }
         
     },
-    findByMarca: (marca) => {
-      
-
-        let marcaConsultada = db.marca.find(element => element.marca === marca.toString().toUpperCase())        
-        let resultadoPesquisaMarca = []
+    findByMarca: async (marca) => {
         
-        for (let i in db.produtos){
-           
-            if (db.produtos[i].id_marca === marcaConsultada.id){
-                resultadoPesquisaMarca.push(db.produtos[i])
+        let marcaConsultada = new Array
+        let resultadoPesquisaMarca = new Array
+        
+
+        await Marca.findAll({
+            where: {
+                marca: marca
             }
-        }
+        })
+        .then((rtn)=>{
+            marcaConsultada.push(rtn[0].dataValues)
+        })
+
+        
+
+                
+        await Produtos.findAll({
+            where: {
+                id_marca: marcaConsultada[0].id
+            }
+        })
+        .then((rtn)=> {
+            for (i in rtn){
+                resultadoPesquisaMarca.push(rtn[i].dataValues)
+            }
+        })
+        
+        
               
         if (resultadoPesquisaMarca.length > 0) {
             return resultadoPesquisaMarca
@@ -226,22 +249,70 @@ const ProdutoModel = {
         }
                 
     },
-    findByProcessador: (processador) => {
-        let processadorConsultado = db.processador.find(element => element.processador === processador.toString().toUpperCase())        
-        let resultadoPesquisaprocessador = []
+    findByProcessador: async (processador) => {
+    
+    
+        let processadorConsultado = new Array
+        let resultadoPesquisaProcessador = new Array
         
-        for (let i in db.produtos){
-           
-            if (db.produtos[i].id_processador === processadorConsultado.id){
-                resultadoPesquisaprocessador.push(db.produtos[i])
+
+        await Processador.findAll({
+            where: {
+                processador: processador 
             }
-        }
+        })
+        .then((rtn)=>{
+            processadorConsultado.push(rtn[0].dataValues)
+        })
+
+        
+
+                
+        await Produtos.findAll({
+            where: {
+                id_processador: processadorConsultado[0].id
+            }
+        })
+        .then((rtn)=> {
+            for (i in rtn){
+                resultadoPesquisaProcessador.push(rtn[i].dataValues)
+            }
+        })
+        
+        
               
-        if (resultadoPesquisaprocessador.length > 0) {
-            return resultadoPesquisaprocessador
+        if (resultadoPesquisaProcessador.length > 0) {
+            return resultadoPesquisaProcessador
         }else{
             return undefined
         }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        //     let processadorConsultado = db.processador.find(element => element.processador === processador.toString().toUpperCase())        
+    //     let resultadoPesquisaprocessador = []
+        
+    //     for (let i in db.produtos){
+           
+    //         if (db.produtos[i].id_processador === processadorConsultado.id){
+    //             resultadoPesquisaprocessador.push(db.produtos[i])
+    //         }
+    //     }
+              
+    //     if (resultadoPesquisaprocessador.length > 0) {
+    //         return resultadoPesquisaprocessador
+    //     }else{
+    //         return undefined
+    //     }
     }
     
 }

@@ -1,33 +1,67 @@
-const db = require('../database/db.json');
-const PassModel = require('../database/PassModel')
+
+const PassModel = require('./PassModel')
+const Cliente = require('../models/Cliente')
 
 
 const LoginCliente =  {
     
-    findEmail : (email)=>{
-        console.log(email + "email informado")
-        for (let i in db.cliente){
-            
-           if(db.cliente[i].email === email){
-           
-            return true
-           } 
-        }
-        return false
+    findEmail : async (email)=>{
+
+        
+
+        
+        
+        await Cliente.findAll()
+        .then((rtn)=> {
+            for (let i in rtn){
+                
+                if(rtn[i].dataValues.email === email){
+                  
+                 return true
+                } 
+             }
+             return false
+        })
+
+
+        
         
     },
-    findSenha : (email,senha)=>{
-        for (let i in db.cliente){
-            
-            if(db.cliente[i].email === email & PassModel.passValidation(senha,db.cliente[i].senha)){
-                console.log('email e senha bateu')
+    findSenha : async (email,senha)=>{
+       
+        await Cliente.findAll()
+        .then((rtn)=> {
+            for (let i in rtn){
                 
-             return true
-            } 
-         }
-         return false
+            
+                if(rtn[i].dataValues.email === email & PassModel.passValidation(senha,rtn[i].dataValues.senha)){
+                
+                 return true
+                } 
+             }
+             return false
+        })
+        
+        
+        
     },
-    findCliente: (email) => db.cliente.find(elemento => elemento.email === email)
+    findCliente: async (email) => {
+        await Cliente.findAll({
+            where: {
+                email: email
+            }
+        })
+        .then((rtn) => {
+            if (rtn.length > 0) {
+                return rtn[0].dataValues
+            } else {
+                return undefined
+            }
+
+        })
+
+        
+    } 
 
    
 }
