@@ -73,6 +73,7 @@ const HomeController = {
     })
     .then((rtn) => {
         pedido = rtn[0].dataValues.id // AQUI SALVO O ID  DESSE PEDIDO EM ABERTO
+        
     })
 
     await consultaPedido // AQUI EXECUTO ESSA VARIÁVEL DE CIMA
@@ -292,6 +293,7 @@ const HomeController = {
         let {id} = req.params
 
         
+
 
         res.send('finalizado')
     }

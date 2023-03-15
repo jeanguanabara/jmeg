@@ -6,7 +6,7 @@
 
     <main>
       <section class="container">
-        <form action="/finalizaCarrinho/<%=pedido_itens[0].id_pedido%>">
+        <form action="/finalizaCarrinho/<%=pedido_itens[0].id_pedido%>" method="post" name="formCarrinho" id="formCarrinho">
         <ol class="list-group list-group-numbered">
           
         <%for (i in pedido_itens){%>
@@ -81,7 +81,7 @@
           <div class="input-group m-5 d-flex justify-content-center">
             <span class="input-group-text">R$</span>
             <input readonly=“true” id="vlr-total-carrinho" value="0" class="input-group-text"></input>
-            <button class="btn btn-primary" type="submit"  >Finalizar</button>
+            <button class="btn btn-primary" type="submit" form="formCarrinho"  >Finalizar</button>
           </div>
         </div>
       </form>
