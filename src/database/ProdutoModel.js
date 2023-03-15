@@ -5,6 +5,8 @@ const Processador = require('../models/Processador')
 const Ram = require('../models/Ram')
 const Tela = require('../models/Tela')
 
+
+
 const ProdutoModel = {
     findAll : async ()=> {
         let marca = new Array
@@ -286,33 +288,12 @@ const ProdutoModel = {
         }else{
             return undefined
         }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        //     let processadorConsultado = db.processador.find(element => element.processador === processador.toString().toUpperCase())        
-    //     let resultadoPesquisaprocessador = []
+
+    },
+    consultaCarrinhoAberto: async (idcliente) => {
         
-    //     for (let i in db.produtos){
-           
-    //         if (db.produtos[i].id_processador === processadorConsultado.id){
-    //             resultadoPesquisaprocessador.push(db.produtos[i])
-    //         }
-    //     }
-              
-    //     if (resultadoPesquisaprocessador.length > 0) {
-    //         return resultadoPesquisaprocessador
-    //     }else{
-    //         return undefined
-    //     }
+
+
     }
     
 }

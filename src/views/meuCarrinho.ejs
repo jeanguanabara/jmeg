@@ -6,10 +6,44 @@
 
     <main>
       <section class="container">
+        <form action="">
         <ol class="list-group list-group-numbered">
-          <%- include("./components/teste-item-carrinho.ejs") %> 
-          <%- include("./components/teste-item-carrinho.ejs") %>
-          <%- include("./components/teste-item-carrinho.ejs") %>
+          
+        <%for (i in pedido_itens){%>
+          <li class="card m-3 list-group-item lista-item-meu-carrinho">
+            <div class="d-flex item-meu-carrinho flex-row" style="width: 100%">
+              <img src="<%=produtos.find(elemento => elemento.id == pedido_itens[i].id_produto).img%>" class="card-img-top" alt="Imagem Produto" />
+              <div class="card-body">
+                <h5 class="card-title"><%=produtos.find(elemento => elemento.id == pedido_itens[i].id_produto).nome%></h5>
+                <p class="card-text">
+                  <%=produtos.find(elemento => elemento.id == pedido_itens[i].id_produto).nome%>
+                </p>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Remover Item
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/removeItemCarrinho/<%=pedido_itens[i].id%>">SIM</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item-carrinho-vlr-add-rem d-flex flex-column justify-content-center">
+                <div class="p-3 d-flex flex-row">
+                  <p class="p-1"><strong>R$</strong></p>
+                  <p id="vlr-item-carrinho" class="p-1"><strong><%=pedido_itens[i].total.toFixed(2)%></strong></p>
+                </div>        
+                <div class="d-flex justify-content-center align-center">
+                  <p id="somar-item-carrinho" class="btn btn-primary m-1">+</p>
+                  <p id="qnt-item-carrinho" class="m-1 text-center input-group-text ">1</p>
+                  <p id="subtrair-item-carrinho" class="btn btn-primary m-1">-</p>
+                </div>
+              </div>
+              
+              
+            </div>
+          </li>
+
+          <%}%>
 
         </ol>
       </section>
@@ -47,9 +81,10 @@
           <div class="input-group m-5 d-flex justify-content-center">
             <span class="input-group-text">R$</span>
             <span id="vlr-total-carrinho" class="input-group-text">0</span>
-            <a class="btn btn-primary" href="">Finalizar</a>
+            <button class="btn btn-primary" type="submit"  >Finalizar</button>
           </div>
         </div>
+      </form>
       </section>
     </main>
 

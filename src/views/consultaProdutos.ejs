@@ -23,7 +23,7 @@
                       <h5 class="card-title text-secondary"><strong><%=itensPesquisados[i].nome%></strong></h5>
                       <p class="card-text text-secondary">R$ <%=itensPesquisados[i].valor%></p>
                       
-                      <a href="/meucarrinho" class="btn btn-outline-primary m-1">Comprar - falta fazer</a>
+                      <a href="/purchaseItem/<%=itensPesquisados[i].id%>" class="btn btn-outline-primary m-1">Comprar</a>
                       <a href="/itemvenda/<%=itensPesquisados[i].id%>" class="btn btn-outline-primary m-1">Ver mais</a>
                     </div>
                   </div>

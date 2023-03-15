@@ -1,5 +1,5 @@
 const isClienteLogadoLogin = (req,res,next) => {
-    
+    //criado apenas para a tela de login do site, não passando a url como parâmetro
     if (req.session.cliente){
         
 

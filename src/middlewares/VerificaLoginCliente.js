@@ -1,4 +1,5 @@
 const VerificaLoginClienteMiddlaware = async (req,res,next) => {
+    const Cliente = require('../models/Cliente')
     
     let contador = Object.keys(req.body).length
 
@@ -22,11 +23,15 @@ const VerificaLoginClienteMiddlaware = async (req,res,next) => {
                 
                 
 
-            
-                
-                req.session.cliente = LoginCliente.findCliente(email) // SALVA CLIENTE NA SESSION
-                
-                
+                await Cliente.findAll({
+                    where: {
+                        email: email
+                    }
+                })
+                .then((rtn)=> {
+                    req.session.cliente = rtn[0].dataValues  // SALVA CLIENTE NA SESSION
+                })
+                 
                 
                 return next()
             }  else {
