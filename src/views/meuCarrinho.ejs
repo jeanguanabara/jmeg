@@ -1,93 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <%- include ("./components/head.ejs") %>
-  <body>
-    <%- include ("./components/header.ejs")%>
 
-    <main>
-      <section class="container">
-        <form action="/finalizaCarrinho/<%=pedido_itens[0].id_pedido%>" method="post" name="formCarrinho" id="formCarrinho">
-        <ol class="list-group list-group-numbered">
-          
-        <%for (i in pedido_itens){%>
-          <li class="card m-3 list-group-item lista-item-meu-carrinho">
-            <div class="d-flex item-meu-carrinho flex-row" style="width: 100%">
-              <img src="<%=produtos.find(elemento => elemento.id == pedido_itens[i].id_produto).img%>" class="card-img-top" alt="Imagem Produto" />
-              <div class="card-body">
-                <h5 class="card-title"><%=produtos.find(elemento => elemento.id == pedido_itens[i].id_produto).nome%></h5>
-                <p class="card-text">
-                  <%=produtos.find(elemento => elemento.id == pedido_itens[i].id_produto).nome%>
-                </p>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Remover Item
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/removeItemCarrinho/<%=pedido_itens[i].id%>">SIM</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="item-carrinho-vlr-add-rem d-flex flex-column justify-content-center">
-                <div class="p-3 d-flex flex-row">
-                  <p class="p-1"><strong>R$</strong></p>
-                  <strong><input readonly="true" id="vlr-item-carrinho"  value="<%=pedido_itens[i].total.toFixed(2)%>" class="p-1 border-0"></input></strong>
-                </div>        
-                <div class="d-flex justify-content-center align-center">
-                  <p id="somar-item-carrinho" class="btn btn-primary m-1">+</p>
-                  <input id="qnt-item-carrinho" readonly=“true” name="qnt-item-carrinho-<%=pedido_itens[i].id%>" value="1" class="m-1 text-center input-group-text "></input>
-                  <p id="subtrair-item-carrinho" class="btn btn-primary m-1">-</p>
-                </div>
-              </div>
-              
-              
-            </div>
-          </li>
+    <body>
+      <%- include ("./components/header.ejs")%>
 
-          <%}%>
+        <main>
+          <section class="container">
 
-        </ol>
-      </section>
+            <%if ((typeof pedido_itens !== "undefined")&&(typeof produtos !==
+              "undefined")){%>
+                <%console.log(pedido_itens)%>
+              <form action="/finalizaCarrinho/<%=pedido_itens[0].id_pedido%>"
+                method="post" name="formCarrinho" id="formCarrinho">
+                <ol class="list-group list-group-numbered">
 
-      <section
-        class="container d-flex justify-content-between p-3 align-middle"
-      >
-        <div class="d-flex justify-content-between p-3 align-middle flex-row ">
-          <div class="m-2">
-            <label for="" class="form-label">Número do Cartão</label>
-          <input
-            type="text"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            id="numero-cartao-credito"
-            class="form-control"
-            maxlength="16"
-          />
-          </div>
-          <div class="m-2 cvv-carrinho">
-            <label for="" class="form-label number">CVV</label>
-            <input
-            type="text"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            id="numero-cvv"
-            class="form-control"
-            maxlength="3"
-            />
-          </div>
-          
-          
-         
-          
-        </div>
-        <div class="">
-          <div class="input-group m-5 d-flex justify-content-center">
-            <span class="input-group-text">R$</span>
-            <input readonly=“true” id="vlr-total-carrinho" value="0" class="input-group-text"></input>
-            <button class="btn btn-primary" type="submit" form="formCarrinho"  >Finalizar</button>
-          </div>
-        </div>
-      </form>
-      </section>
-    </main>
+                  <%for (i in pedido_itens){%>
+                    <li class="card m-3 list-group-item
+                      lista-item-meu-carrinho">
+                      <input style="display: none;" type="text"
+                        name="idPedidoItem" value="<%=pedido_itens[i].id%>">
+                      <div class="d-flex item-meu-carrinho flex-row"
+                        style="width: 100%">
+                        <img src="<%=produtos.find(elemento=> elemento.id ==
+                        pedido_itens[i].id_produto).img%>" class="card-img-top"
+                        alt="Imagem Produto" />
+                        <div class="card-body">
+                          <h5 class="card-title"><%=produtos.find(elemento=>
+                              elemento.id == pedido_itens[i].id_produto).nome%></h5>
+                            <p class="card-text">
+                              <%=produtos.find(elemento=> elemento.id ==
+                                pedido_itens[i].id_produto).nome%>
+                              </p>
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-danger
+                                  dropdown-toggle" data-bs-toggle="dropdown"
+                                  aria-expanded="false">
+                                  Remover Item
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item"
+                                      href="/removeItemCarrinho/<%=pedido_itens[i].id%>">SIM</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="item-carrinho-vlr-add-rem d-flex
+                              flex-column justify-content-center">
+                              <div class="p-3 d-flex flex-row">
+                                <p class="p-1"><strong>R$</strong></p>
+                                <strong><input readonly="true"
+                                    name="vlrItemCarrinho"
+                                    id="vlr-item-carrinho" value="<%=pedido_itens[i].total.toFixed(2)%>"
+                                  class="p-1 border-0"></input></strong>
+                            </div>
+                            <div class="d-flex justify-content-center
+                              align-center">
+                              <p id="somar-item-carrinho" class="btn btn-primary
+                                m-1">+</p>
+                              <input id="qnt-item-carrinho" readonly=“true”
+                                name="qntItemCarrinho" value="<%=pedido_itens[i].qnt%>" class="m-1
+                                text-center input-group-text "></input>
+                            <p id="subtrair-item-carrinho" class="btn
+                              btn-primary m-1">-</p>
+                          </div>
+                        </div>
 
-    <%- include ("./components/footer.ejs")%>
-  </body>
-</html>
+
+                      </div>
+                    </li>
+
+                    <%}%>
+
+                    </ol>
+                  </section>
+
+                  <section
+                    class="container d-flex justify-content-between p-3
+                    align-middle">
+                    <div class="d-flex justify-content-between p-3 align-middle
+                      flex-row ">
+                      <div class="m-2">
+                        <label for="" class="form-label">Número do Cartão</label>
+                        <input
+                          type="text"
+                          onkeypress="return event.charCode>= 48 &&
+                        event.charCode <= 57"
+                          id="numero-cartao-credito"
+                          class="form-control"
+                          maxlength="16"
+                          />
+                        </div>
+                        <div class="m-2 cvv-carrinho">
+                          <label for="" class="form-label number">CVV</label>
+                          <input
+                            type="text"
+                            onkeypress="return event.charCode>= 48 &&
+                          event.charCode <= 57"
+                            id="numero-cvv"
+                            class="form-control"
+                            maxlength="3"
+                            />
+                          </div>
+
+
+
+
+                        </div>
+                        <div class="">
+                          <div class="input-group m-5 d-flex
+                            justify-content-center">
+                            <span class="input-group-text">R$</span>
+                            <input readonly=“true” id="vlr-total-carrinho"
+                              name="vlrTotalCarrinho" value="0"
+                              class="input-group-text"></input>
+                          <button class="btn btn-primary" type="submit"
+                            form="formCarrinho">Finalizar</button>
+                        </div>
+                      </div>
+                    </form>
+
+                    <%} else {%>
+                      <div class="pt-5 pb-5 mt-5 mb-5 noProductCarrinho">
+                        <img src="/img/png/empty-cart.png" alt="Carrinho Vazio"
+                          class="text-center" style="width: 20%;">
+                      </div>
+
+                      <%}%>
+                      </section>
+                    </main>
+
+                    <%- include ("./components/footer.ejs")%>
+                    </body>
+
+                  </html>
