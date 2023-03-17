@@ -11,14 +11,16 @@
                 <div class="my-5">
                     <h1 class="text-dark text-center">Meus pedidos</h1>
                 </div>
-                
+              <%if (typeof pedido !== "undefined"){%>
+                <%for (i in pedido){%>  
                 <div class="card" style="width: 100%;">
                     <div class="card-body">
-                      <h5 class="card-title text-dark">Pedido nº: 10</h5>                    
-                      <p class="card-text text-secondary">R$ 15000,00</p>
+                      <h5 class="card-title text-dark">Pedido nº: <%=pedido[i].id%></h5>                    
+                      <p class="card-text text-secondary">R$ <%=pedido[i].total%></p>
                     </div>
                   </div>
-                
+                  <%}%>
+                  <%}%>
             </section>
         </section>
 

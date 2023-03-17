@@ -3,6 +3,8 @@ const ProdutosModel = require("../database/ProdutoModel");
 const Pedido_itens = require("../models/Pedido_itens");
 const Pedido = require("../models/Pedido");
 const Produtos = require("../models/Produtos");
+const Cliente = require("../models/Cliente")
+const Endereco = require("../models/Endereco")
 
 const HomeController = {
   showHomePage: async (req, res) => {
@@ -160,15 +162,51 @@ const HomeController = {
     });
   },
   showHomeCliente: (req, res) => {
+
+
     return res.render("homecliente", { clienteLogado: req.session.cliente });
   },
-  showEditaMeuCadastro: (req, res) => {
+  showEditaMeuCadastro: async (req, res) => {
+    
+    let consultaEndereco = await Endereco.findAll({
+      where: {
+        id: req.session.cliente.id_end,
+      }
+    })
+    .then((rtn) => {
+      return rtn[0].dataValues
+
+    })
+
+      console.log("editaMeuCadastro")
+      console.log(req.session.cliente)
     return res.render("editameucadastro", {
-      clienteLogado: req.session.cliente,
+      clienteLogado: req.session.cliente, endereco: await consultaEndereco
     });
   },
-  showMeusPedidos: (req, res) => {
-    return res.render("meuspedidos", { clienteLogado: req.session.cliente });
+  showMeusPedidos: async (req, res) => {
+   let {id} = req.session.cliente
+   
+
+   let pedido = new Array
+    
+   await Pedido.findAll({
+    where: {
+      id_cliente: id,
+      finalizado: "S"
+    }
+   })
+   .then((rtn)=>{
+    for (i in rtn) {
+
+      pedido.push(rtn[i].dataValues)
+      
+    }
+   })
+    
+   
+
+    return res.render("meuspedidos", { clienteLogado: req.session.cliente, pedido: pedido});
   },
   showHomeAdmin: (req, res) => {
     return res.render("homeadmin", { adminLogado: req.session.usuarios });
@@ -346,6 +384,45 @@ const HomeController = {
 
     res.redirect("/homecliente");
   },
+  atualizaCliente: async (req,res)=> {
+    let {id} = req.params
+
+    let {id_end} = req.session.cliente
+
+    let {name,cpf,email,cep,uf,cidade,bairro,logradouro,numero,complemento} = req.body
+
+    await Cliente.update({
+      nome: name,
+      cpf: cpf,
+      email:email
+    },{
+      where: {
+        id: id
+      }
+    })
+    await Endereco.update({
+      cep: cep,
+      uf:uf,
+      cidade:cidade,
+      bairro:bairro,
+      logradouro:logradouro,
+      numero:numero,
+      complemento: complemento
+    },{
+      where: {
+        id: id_end
+      }
+    })
+   
+
+    
+    await Cliente.findByPk(id)
+    .then((rtn)=> {
+      req.session.cliente = rtn.dataValues;
+    })
+
+    return res.redirect('/homecliente')
+  }
 };
 
 module.exports = HomeController;

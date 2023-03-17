@@ -38,6 +38,7 @@ router.post('/editameucadastro',VerificaLoginClienteMiddlaware,isClienteLogado, 
 router.post('/meuspedidos',VerificaLoginClienteMiddlaware,isClienteLogado, HomeController.showMeusPedidos)
 router.post('/purchaseItem/:id',VerificaLoginClienteMiddlaware,isClienteLogado,HomeController.purchaseItem)
 router.post('/finalizaCarrinho/:id',isClienteLogado, HomeController.finalizaCarrinho )
+router.post('/atualizaCliente/:id',isClienteLogado, HomeController.atualizaCliente)
 
 //aqui verifica as rotas get's que o cliente precisa estar logado, se n estiver vai jogar pra página de login para vir um post com a rota para essa aqui de cima
 

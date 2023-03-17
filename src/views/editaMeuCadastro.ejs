@@ -8,11 +8,11 @@
         <section class="container d-flex flex-row">
           <%- include("./components/navLateralhomeadmin.ejs")%><!--  MENU LATERAL DO CLIENTE -->
             <div class="mx-2 p-3 bg-dark rounded">
-              <form class="" novalidate="">
+              <form class="" novalidate="" action="/atualizaCliente/<%=clienteLogado.id%>" method="post">
                 <div class="row g-3">
                   <div class="col">
                     <label for="Name" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="Name" placeholder="" value="" required="">
+                    <input type="text" class="form-control" id="Name" name="name" placeholder="" value="<%=clienteLogado.nome%>" required="">
                     
                   </div>
       
@@ -25,53 +25,53 @@
                      
                     >CPF</label>
                     <div class="input-group has-validation">
-                      <input type="text" class="form-control" id="CPF" placeholder="" required="" maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                      <input type="text" class="form-control" id="CPF" name="cpf" value="<%=clienteLogado.cpf%>" maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                     
                     </div>
                   </div>
       
                   <div class="col-12">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <input type="email" class="form-control" id="email" name="email" value="<%=clienteLogado.email%>" placeholder="you@example.com">
                     
                   </div>
 
                   <div class="col-md-3">
                     <label for="zip" class="form-label">CEP</label>
-                    <input type="text" class="form-control" id="cep" placeholder="00000000" required="" maxlength="8" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    <input type="text" class="form-control" id="cep" name="cep" value="<%=endereco.cep%>" placeholder="00000000" required="" maxlength="8" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                     
                   </div>
 
                   <div class="col-md-2">
                     <label for="country" class="form-label">UF</label>
-                    <input type="text" class="form-control" id="uf" placeholder="" value="" required="">
+                    <input type="text" class="form-control" id="uf" name="uf" placeholder="" value="<%=endereco.uf%>" required="">
                     
                   </div>
       
                   <div class="col-md-7">
                     <label for="state" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" id="cidade" placeholder="" value="" required="">
+                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="" value="<%=endereco.cidade%>" required="">
                     
                   </div>
                   <div class="col-md-7">
                     <label for="state" class="form-label">Bairro</label>
-                    <input type="text" class="form-control" id="bairro" placeholder="" value="" required="">
+                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder="" value="<%=endereco.bairro%>" required="">
                     
                   </div>
       
                   <div class="col-12">
                     <label for="address" class="form-label">Logradouro</label>
-                    <input type="text" class="form-control" id="logradouro" placeholder="Rua a" required="">
+                    <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Rua a" value="<%=endereco.logradouro%>">
                     
                   </div>
                   <div class="col-6">
                     <label for="address2" class="form-label">Numero</label>
-                    <input type="text" class="form-control" id="complemento" placeholder="N 85">
+                    <input type="text" class="form-control" id="numero" name="numero" placeholder="N 85" value="<%=endereco.numero%>">
                   </div>
       
                   <div class="col-12">
                     <label for="address2" class="form-label">Complemento</label>
-                    <input type="text" class="form-control" id="complemento" placeholder="Casa/Apartamento/Quadra">
+                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Casa/Apartamento/Quadra" value="<%=endereco.complemento%>">
                   </div>
       
                   

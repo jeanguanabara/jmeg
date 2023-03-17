@@ -9,6 +9,7 @@ window.addEventListener('load', ()=> {
     const cep = document.getElementById('cep')
     const uf = document.getElementById('uf')
     const cidade = document.getElementById('cidade')
+    const bairro = document.getElementById('bairro');
     const logradouro = document.getElementById('logradouro')
     const complemento = document.getElementById('complemento')
     
@@ -32,6 +33,7 @@ window.addEventListener('load', ()=> {
         .then(retornoEndereco => {
             uf.value = retornoEndereco.uf
             cidade.value = retornoEndereco.localidade
+            bairro.value = retornoEndereco.bairro
             logradouro.value = retornoEndereco.logradouro
         })
        }

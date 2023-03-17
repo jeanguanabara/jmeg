@@ -9,7 +9,7 @@ const AdminController = {
     },
 
     showHomeAdmin: (req,res)=>{
-
+      
         
         return res.render('homeAdmin', {admin: req.session.user})
     },
