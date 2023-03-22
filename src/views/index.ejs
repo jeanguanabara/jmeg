@@ -17,7 +17,7 @@
               <img src="<%=itensMenorValor[i].img%>" alt="Imagem Produto" />
             </div>
             <div class="mNPItemDesc"><%=itensMenorValor[i].nome%></div>
-            <div class="mNPItemVlr"><strong>R$ <%=itensMenorValor[i].valor%></strong></div>
+            <div class="mNPItemVlr"><strong><%=itensMenorValor[i].valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})%></strong></div>
           </a>
           <%}%>
           <%}%>

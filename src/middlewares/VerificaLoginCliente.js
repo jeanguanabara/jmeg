@@ -48,7 +48,7 @@ const VerificaLoginClienteMiddlaware = async (req,res,next) => {
     }
 
     
-    
+
     
 
 }//FIM MIDDLEWARE
