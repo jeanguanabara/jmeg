@@ -9,4 +9,7 @@ const PassModel = {
     }
 }
 
+
+console.log(PassModel.passValidation("124","$2a$10$4Dfvnt0KolUTRe0FMDAwkOLFgWrM2EVue2oVbH2SgR6IpPxZm9cIS"))
+
 module.exports = PassModel

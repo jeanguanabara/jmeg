@@ -13,7 +13,7 @@
                 </div>
               <%if (typeof pedido !== "undefined"){%>
                 <%for (i in pedido){%>  
-                <div class="card" style="width: 100%;">
+                <div class="card mb-2" style="width: 100%;">
                     <div class="card-body">
                       <h5 class="card-title text-dark">Pedido nº: <%=pedido[i].id%></h5>                    
                       <p class="card-text text-secondary">R$ <%=pedido[i].total%></p>

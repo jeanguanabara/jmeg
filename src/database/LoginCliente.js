@@ -22,8 +22,6 @@ const LoginCliente =  {
              }
              return false
         })
-
-
         
         
     },
@@ -32,13 +30,23 @@ const LoginCliente =  {
         await Cliente.findAll()
         .then((rtn)=> {
             for (let i in rtn){
+
+               
+
+
                 
             
-                if(rtn[i].dataValues.email === email & PassModel.passValidation(senha,rtn[i].dataValues.senha)){
-                
-                 return true
+                if(rtn[i].dataValues.email === email){
+                    
+
+                    if (PassModel.passValidation(senha,rtn[i].dataValues.senha)){
+                      
+                        return true
+                    }
+                  
                 } 
              }
+
              return false
         })
         

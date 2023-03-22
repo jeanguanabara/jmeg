@@ -201,7 +201,7 @@ const HomeController = {
 
       pedido.push(rtn[i].dataValues)
       
-      
+  
     }
    })
     

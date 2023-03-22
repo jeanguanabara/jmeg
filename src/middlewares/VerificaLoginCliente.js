@@ -1,11 +1,16 @@
+
+
+
 const VerificaLoginClienteMiddlaware = async (req,res,next) => {
-    const Cliente = require('../models/Cliente')
+    
     
     let contador = Object.keys(req.body).length
 
     if (contador == 2){
         const dadosLogin = req.body
         const LoginCliente = require('../database/LoginCliente')
+        const Cliente = require('../models/Cliente')
+        const PassModel = require('../database/PassModel')
         
 
         const email = dadosLogin.vLoginEmailCliente
@@ -13,35 +18,28 @@ const VerificaLoginClienteMiddlaware = async (req,res,next) => {
 
 
         
+     
+        let listaClientes = Cliente.findAll()
+        .then((rtn)=> {
+            for (let i in rtn){
+                if(rtn[i].dataValues.email == email){
+                    if (PassModel.passValidation(senha, rtn[i].dataValues.senha)){
+                        req.session.cliente = rtn[i].dataValues
 
-
-
-
-        if (LoginCliente.findEmail(email)){ //aqui verifica se tem o email do LoginCliente na base
-            console.log('retornou true')
-            if (LoginCliente.findSenha(email,senha)){ //se achar o email, vai verificar se a senha informada bate com o email que entrou
-                
-                
-
-                await Cliente.findAll({
-                    where: {
-                        email: email
+                        return next()
                     }
-                })
-                .then((rtn)=> {
-                    req.session.cliente = rtn[0].dataValues  // SALVA CLIENTE NA SESSION
-                })
-                 
+                }
+           
                 
-                return next()
-            }  else {
-                //se a senha não bater, vai retornar erro que a senha ta incorreta
-                return res.render('login', {urlDestino: undefined, error: "Dados Incorretos"})
             }
-        }  else {
-            //se o email ta incorreto nem valida senha, só diz que o email ta errado.
+
             return res.render('login', {urlDestino: undefined, error: "Dados Incorretos"})
-        }
+        })
+
+
+        await listaClientes
+
+
     } else if (contador == 12){
         
 
