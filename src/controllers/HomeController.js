@@ -310,11 +310,33 @@ const HomeController = {
   removeItem: async (req, res) => {
     let { id } = req.params;
 
+    await Pedido_itens.findByPk(id)
+    .then( async (rtn)=> {
+      await Pedido_itens.findAll({
+        where: {
+          id_pedido: rtn.dataValues.id_pedido
+        }
+      })
+      .then (async (rtn) =>{
+        if (rtn.length == 1){
+          await Pedido.destroy({
+            where: {
+              id: rtn[0].dataValues.id_pedido
+            }
+          })
+        }
+      })
+    })
+
     await Pedido_itens.destroy({
       where: {
         id: id,
       },
     });
+
+
+
+
 
     res.redirect("/meucarrinho");
   },

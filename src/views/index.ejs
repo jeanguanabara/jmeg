@@ -53,7 +53,7 @@
                 />
               </div>
               <div class="mPBItemVlr" id="mPBItemVlr">
-                <strong>R$ <%=itensMaisRecentes[i].valor%></strong>
+                <strong><%=itensMaisRecentes[i].valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})%></strong>
               </div>
             </div>
             <div class="mPBItemDesc"><%=itensMaisRecentes[i].nome%></div>
